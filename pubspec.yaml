@@ -1,5 +1,5 @@
-name: packages
-description: "A new Flutter project."
+name: extension_pro
+description: "Extension Pro simplifies your development process, making it faster and more efficient."
 version: 0.0.1
 homepage: https://github.com/sanjaysharmajw/extensions_pro.git
 
@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  intl: ^0.19.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -21,6 +23,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  uses-material-design: true
 
   # To add assets to your package, add an assets section, like this:
   # assets:
