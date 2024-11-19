@@ -1,10 +1,10 @@
 name: packages
 description: "A new Flutter project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/sanjaysharmajw/extensions_pro.git
 
 environment:
-  sdk: ^3.5.4
+  sdk: ^3.5.3
   flutter: ">=1.17.0"
 
 dependencies:
