@@ -1,9 +1,6 @@
 
 
-import 'package:extension_pro/extensions_pro_base.dart';
 import 'package:extension_pro/extentions_pro.dart';
-import 'package:extension_pro/navigation_extensions_pro.dart';
-import 'package:extension_pro/widgets_extension_pro.dart';
 import 'package:flutter/material.dart';
 
 class ExampleExtensionsPro extends StatefulWidget {

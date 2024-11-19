@@ -1,6 +1,5 @@
 
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+part of '../extentions_pro.dart';
 
 /// Date Picker
 extension DatePickerExtension on BuildContext {

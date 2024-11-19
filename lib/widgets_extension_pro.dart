@@ -1,5 +1,5 @@
 
-import 'package:flutter/material.dart';
+part of '../extentions_pro.dart';
 
 extension WidgetExtension on Widget {
   /// Adds padding to the widget
