@@ -9,11 +9,8 @@
 
 This Extensions Pro Package empowers you to accelerate your development process, enabling faster and more efficient project completion.
 
-- [Date Picker](#Date-Picker)
-- [Week Day](#Week-Day)
-- [Time Picker](#Time-Picker)
-- [Date Time Difference](#Date-Time-Difference)
-- [Valid URL](#Valid-URL)
+- [Date and Time-Extension](#Date-and-Time-Extension)
+- [Valid URL Extension](#Valid-URL-Extension)
 - [Navigation Extension](#Navigation-Extension)
 - [Widgets Extension](#Widgets-Extension)
 
@@ -21,37 +18,28 @@ This Extensions Pro Package empowers you to accelerate your development process,
 
 
 
-#### Date Picker
+#### Date and Time Extension
 
 ```dart
+//Date Picker
 final dateSelected = await context.pickDate(dateFormatChange: "yyyy-MM-dd"); Output: 2024-11-06 
-```
 
-#### Week Day
 
-```dart
-int day = 3;
-var days=day.toWeekDay(); // Output: Wednesday
-var dayHalfName=day.toWeekDay(isHalfName: true); // Output: Wed
-```
-
-#### Time Picker
-
-```dart
+// Time Picker
 TimeOfDay? selectedTime;
-
-// onTap
 final selectedTimes = await context.pickTime();
       setState(() {
         selectedTime = selectedTimes;
         });
 
 var output = selectedTime!.format(context);  // 11:08 PM
-```
 
-#### Date Time Difference
+//Week Day
+int day = 3;
+var days=day.toWeekDay(); // Output: Wednesday
+var dayHalfName=day.toWeekDay(isHalfName: true); // Output: Wed
 
-```dart
+//Date Time Difference
 final date1 = DateTime(2024, 11, 19);
 final date2 = DateTime(2024, 11, 15);
 final difference = date1.differenceInDays(date2);
@@ -60,7 +48,8 @@ Difference in days: difference.inDays  // Output: Difference in days: 4 days
 Total difference in hours: difference.inHours // Output: Total difference in hours: 96 hours
 ```
 
-#### Valid URL
+
+#### Valid URL Extension
 
 ```dart
 final url1 = "https://www.example.com";
@@ -86,42 +75,26 @@ context.pushAndRemoveUntil(HomeScreen()); // Push and Clear Navigation Stack
 #### Widgets Extension
 
 ```dart
+widget.withPadding(EdgeInsets.all(8.0)); //withPadding: Wraps the widget in a Padding widget to apply padding around it.
+widget.withMargin(EdgeInsets.all(8.0)); // withMargin: Wraps the widget in a Container and applies margin.
+widget.centered(); // centered: Centers the widget inside a Center widget.
+widget.withBorder(color: Colors.blue, width: 2.0); // withBorder: Adds a border around the widget by wrapping it inside a Container with a BoxDecoration.
+widget.withShadow(blurRadius: 5.0, color: Colors.grey); // withShadow: Adds a shadow to the widget by wrapping it in a Material widget.
+widget.withRoundedCorners(radius: 12.0); //withRoundedCorners: Applies rounded corners to the widget using ClipRRect.
 
-// withPadding: Wraps the widget in a Padding widget to apply padding around it.
-widget.withPadding(EdgeInsets.all(8.0));
-
-// withMargin: Wraps the widget in a Container and applies margin.
-widget.withMargin(EdgeInsets.all(8.0)); 
-
-// centered: Centers the widget inside a Center widget.
-widget.centered();
-
-// withBorder: Adds a border around the widget by wrapping it inside a Container with a BoxDecoration.
-widget.withBorder(color: Colors.blue, width: 2.0); 
- 
-// withShadow: Adds a shadow to the widget by wrapping it in a Material widget.
-widget.withShadow(blurRadius: 5.0, color: Colors.grey); 
-
-//withRoundedCorners: Applies rounded corners to the widget using ClipRRect.
-widget.withRoundedCorners(radius: 12.0); 
-
-// onTap: Wraps the widget inside a GestureDetector to detect tap 
-widget.onTap(() { events.
+widget.onTap(() { events. //// onTap: Wraps the widget inside a GestureDetector to detect tap 
   print('Widget tapped!');
 });
 
-// withVisibility: Wraps the widget in a Visibility widget, conditionally hiding it based on the isVisible flag.
-widget.withVisibility(true); 
+widget.withVisibility(true); // withVisibility: Wraps the widget in a Visibility widget, conditionally hiding it based on the isVisible flag.
 
 // Example
-
 Text('Hello World!')
             .withPadding(EdgeInsets.all(16.0))
             .withBorder(color: Colors.blue, width: 2.0)
             .withShadow(blurRadius: 8.0, color: Colors.black)
             .withRoundedCorners(radius: 12.0),
           
-
 ElevatedButton(
             onPressed: () {
                 print('Button tapped');
