@@ -9,3 +9,7 @@
 ## 1.0.1
 
 * Code format improved
+
+## 1.0.2
+
+* Add String Extensions

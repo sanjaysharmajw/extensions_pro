@@ -103,7 +103,28 @@ ElevatedButton(
             ).onTap(() {
               print('Button tapped from extension!');
             }),
+```
 
+#### String Extension
+
+```dart
+print('flutter'.capitalize()); // Capitalize the first letter Output: Flutter
+print('test@example.com'.isValidEmail()); // Check if the string is a valid email Output: true
+
+print('invalid-email'.isValidEmail()); // Check if the string is a valid emailOutput: false
+print('flutter'.reverse()); // Reverse the string Output: rettulf
+print('123'.isNumeric());  // Check if the string is numeric Output: true
+print('abc'.isNumeric());  // Check if the string is numeric Output: false
+
+print('Flutter is awesome'.removeWhitespace()); // Remove all whitespace Output: Flutterisawesome
+print('Flutter is amazing'.truncate(10)); // Truncate the string with ellipsis Output: Flutter is...
+
+print('snake_case_string'.toCamelCase()); // Convert snake_case to camelCase Output: SnakeCaseString
+print('flutter is fun'.countOccurrences('u')); // Count occurrences of a character Output: 2
+
+print('madam'.isPalindrome()); // Check if the string is a palindrome Output: true
+print('flutter'.isPalindrome()); // Check if the string is a palindrome Output: 
+print('Order1234'.extractNumbers()); // Extract numbers from a string Output: 1234
 ```
 
 
