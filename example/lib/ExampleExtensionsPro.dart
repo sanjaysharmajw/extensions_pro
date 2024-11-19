@@ -1,6 +1,7 @@
 
 
-import 'package:extension_pro/extentions_pro.dart';
+
+import 'package:extensions_pro/extentions_pro.dart';
 import 'package:flutter/material.dart';
 
 class ExampleExtensionsPro extends StatefulWidget {
