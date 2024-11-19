@@ -42,8 +42,4 @@ extension StringExtensions on String {
   String extractNumbers() {
     return replaceAll(RegExp(r'[^0-9]'), '');
   }
-
-
 }
-
-
