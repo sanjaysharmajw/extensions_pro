@@ -24,8 +24,8 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
 
       final difference = date1.differenceInDays(date2);
 
-      print("Difference in days: ${difference.inDays} days"); // Output: Difference in days: 4 days
-      print("Total difference in hours: ${difference.inHours} hours"); // Output: Total difference in hours: 96 hours
+      debugPrint("Difference in days: ${difference.inDays} days"); // Output: Difference in days: 4 days
+      debugPrint("Total difference in hours: ${difference.inHours} hours"); // Output: Total difference in hours: 96 hours
 
 
     return  SafeArea(
