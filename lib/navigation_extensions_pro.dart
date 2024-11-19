@@ -1,6 +1,4 @@
-
 part of '../extentions_pro.dart';
-
 
 extension NavigationExtension on BuildContext {
   /// Pushes a new screen onto the navigation stack
@@ -29,7 +27,7 @@ extension NavigationExtension on BuildContext {
     return await Navigator.pushAndRemoveUntil(
       this,
       MaterialPageRoute(builder: (_) => page),
-          (route) => false,
+      (route) => false,
     );
   }
 }

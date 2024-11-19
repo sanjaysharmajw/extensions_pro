@@ -1,4 +1,3 @@
-
 part of '../extentions_pro.dart';
 
 extension WidgetExtension on Widget {
@@ -61,9 +60,9 @@ extension WidgetExtension on Widget {
       borderRadius: BorderRadius.circular(radius),
       child: color != null
           ? Container(
-        color: color,
-        child: this,
-      )
+              color: color,
+              child: this,
+            )
           : this,
     );
   }

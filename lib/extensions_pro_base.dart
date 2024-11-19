@@ -1,10 +1,12 @@
-
 part of '../extentions_pro.dart';
 
 /// Date Picker
 extension DatePickerExtension on BuildContext {
   Future<String?> pickDate(
-      {String dateFormatChange="dd-MM-yyyy",DateTime? initialDate, DateTime? firstDate, DateTime? lastDate}) async {
+      {String dateFormatChange = "dd-MM-yyyy",
+      DateTime? initialDate,
+      DateTime? firstDate,
+      DateTime? lastDate}) async {
     final pickedDate = await showDatePicker(
       context: this,
       initialDate: initialDate ?? DateTime.now(),
@@ -79,4 +81,3 @@ extension ValidUrlExtension on String {
 }
 
 // Navigation Page
-
