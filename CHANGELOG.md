@@ -13,3 +13,7 @@
 ## 1.0.2
 
 * Add String Extensions
+
+## 1.0.3
+
+* Bug fixed
