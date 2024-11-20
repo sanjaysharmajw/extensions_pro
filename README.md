@@ -9,10 +9,10 @@
 
 This Extensions Pro Package empowers you to accelerate your development process, enabling faster and more efficient project completion.
 
-- [Date and Time-Extension](#Date-and-Time-Extension)
-- [Valid URL Extension](#Valid-URL-Extension)
-- [Navigation Extension](#Navigation-Extension)
-- [Widgets Extension](#Widgets-Extension)
+- [Date and Time-Extension](#date-and-time-extension)
+- [Valid URL Extension](#valid-url-extension)
+- [Navigation Extension](#navigation-extension)
+- [Widgets Extension](#widgets-extension)
 
 
 
@@ -138,4 +138,18 @@ print('Order1234'.extractNumbers()); // Extract numbers from a string Output: 12
 
 ## 🚀 About Me
 I'm a full stack developer. Cross-Platform Mobile Developer: Android, iOS, Swift , and Flutter Expert
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Badges
+
+Add badges from somewhere like: [shields.io](https://shields.io/)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
