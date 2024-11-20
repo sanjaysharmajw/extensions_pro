@@ -3,8 +3,8 @@
 
 
 
-# Extension Pro
-#### Extension Pro simplifies your development process, making it faster and more efficient.
+# Extensions Pro
+#### Extensions Pro simplifies your development process, making it faster and more efficient.
 
 
 This Extensions Pro Package empowers you to accelerate your development process, enabling faster and more efficient project completion.
@@ -22,15 +22,15 @@ This Extensions Pro Package empowers you to accelerate your development process,
 
 ```dart
 //Date Picker
-final dateSelected = await context.pickDate(dateFormatChange: "yyyy-MM-dd"); Output: 2024-11-06 
+final dateSelected = await context.pickDate(dateFormatChange: "yyyy-MM-dd"); Output: 2024-11-06
 
 
 // Time Picker
 TimeOfDay? selectedTime;
 final selectedTimes = await context.pickTime();
-      setState(() {
-        selectedTime = selectedTimes;
-        });
+setState(() {
+selectedTime = selectedTimes;
+});
 
 var output = selectedTime!.format(context);  // 11:08 PM
 
@@ -83,26 +83,26 @@ widget.withShadow(blurRadius: 5.0, color: Colors.grey); // withShadow: Adds a sh
 widget.withRoundedCorners(radius: 12.0); //withRoundedCorners: Applies rounded corners to the widget using ClipRRect.
 
 widget.onTap(() { events. //// onTap: Wraps the widget inside a GestureDetector to detect tap 
-  print('Widget tapped!');
+print('Widget tapped!');
 });
 
 widget.withVisibility(true); // withVisibility: Wraps the widget in a Visibility widget, conditionally hiding it based on the isVisible flag.
 
 // Example
 Text('Hello World!')
-            .withPadding(EdgeInsets.all(16.0))
-            .withBorder(color: Colors.blue, width: 2.0)
-            .withShadow(blurRadius: 8.0, color: Colors.black)
-            .withRoundedCorners(radius: 12.0),
-          
+    .withPadding(EdgeInsets.all(16.0))
+    .withBorder(color: Colors.blue, width: 2.0)
+    .withShadow(blurRadius: 8.0, color: Colors.black)
+    .withRoundedCorners(radius: 12.0),
+
 ElevatedButton(
-            onPressed: () {
-                print('Button tapped');
-            }
-            child: Text('Tap Me'),
-            ).onTap(() {
-              print('Button tapped from extension!');
-            }),
+onPressed: () {
+print('Button tapped');
+}
+child: Text('Tap Me'),
+).onTap(() {
+print('Button tapped from extension!');
+}),
 ```
 
 #### String Extension
@@ -143,13 +143,4 @@ I'm a full stack developer. Cross-Platform Mobile Developer: Android, iOS, Swift
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
-## Badges
-
-Add badges from somewhere like: [shields.io](https://shields.io/)
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
