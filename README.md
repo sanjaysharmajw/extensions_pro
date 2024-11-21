@@ -1,9 +1,20 @@
 
 ![Logo](https://github.com/sanjaysharmajw/extensions_pro/blob/main/example/assets/extensions_pro.png?raw=true)
 
-
-
 # Extensions Pro
+
+- ![Pub Publisher](https://img.shields.io/pub/publisher/extensions_pro)
+- ![Pub Points](https://img.shields.io/pub/points/extensions_pro)
+- ![Pub Popularity](https://img.shields.io/pub/popularity/extensions_pro)
+- ![Pub Version](https://img.shields.io/pub/v/extensions_pro)
+- ![Pub Likes](https://img.shields.io/pub/likes/extensions_pro)
+
+
+
+
+
+
+
 #### Extensions Pro simplifies your development process, making it faster and more efficient.
 
 
@@ -115,6 +126,10 @@ print('Do the passwords match? $isMatch'); // Output: true
 confirmPassword = 'Password124';
 isMatch = password.isPasswordMatch(confirmPassword);
 print('Do the passwords match? $isMatch'); // Output: false
+
+
+
+
 ```
 
 

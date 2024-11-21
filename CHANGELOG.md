@@ -33,3 +33,7 @@
 ## 1.0.7
 
 * License updated
+
+## 1.0.8
+
+* ReadMe Updated
