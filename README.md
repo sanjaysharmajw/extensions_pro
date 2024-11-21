@@ -18,7 +18,6 @@ This Extensions Pro Package empowers you to accelerate your development process,
 - [Clock Extensions](#clock-extensions)
 
 
-
 #### Date and Time Extensions
 
 ```dart
@@ -116,10 +115,6 @@ print('Do the passwords match? $isMatch'); // Output: true
 confirmPassword = 'Password124';
 isMatch = password.isPasswordMatch(confirmPassword);
 print('Do the passwords match? $isMatch'); // Output: false
-
-
-
-
 ```
 
 
@@ -236,15 +231,25 @@ String currentTime = DateTime.now().toDigitalTimeWithSeconds(); // Change toDigi
 
 
 ## Authors
+* [@sanjaysharmajw](https://github.com/sanjaysharmajw)
 
-- [@sanjaysharmajw](https://github.com/sanjaysharmajw)
 
-
-## 🚀 About Me
+## About Me
 I'm a full stack developer. Cross-Platform Mobile Developer: Android, iOS, Swift , and Flutter Expert
 
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sanjaysharmajw/extensions_pro/blob/main/LICENSE)
+
+
+## Support
+I hope you had a great experience using this package! If you found the Extensions Pro helpful, consider supporting me by buying a coffee—your generosity would mean a lot and is deeply appreciated!
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/sanjaysharmajw)
+
+
+
+## Skills
+Android, iOS, Java, Kotlin, JetPack Compose, SwiftUI, Flutter, Dart, JavaScript, Node.js...
 
