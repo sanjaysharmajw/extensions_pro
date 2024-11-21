@@ -1,9 +1,7 @@
-
 extension StringExtensions on String {
   String capitalize() {
-    return isNotEmpty ? '${this[0].toUpperCase()}${this.substring(1)}' : '';
+    return isNotEmpty ? '${this[0].toUpperCase()}${substring(1)}' : '';
   }
-
 
   String reverse() {
     return split('').reversed.join('');
@@ -18,7 +16,7 @@ extension StringExtensions on String {
   }
 
   String truncate(int length) {
-    return this.length > length ? '${this.substring(0, length)}...' : this;
+    return this.length > length ? '${substring(0, length)}...' : this;
   }
 
   String toCamelCase() {
