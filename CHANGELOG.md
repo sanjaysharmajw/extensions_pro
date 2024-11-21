@@ -29,3 +29,7 @@
 ## 1.0.6
 
 * Add Clock and validation extensions
+
+## 1.0.7
+
+* License updated
