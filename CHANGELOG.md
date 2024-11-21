@@ -21,3 +21,7 @@
 ## 1.0.4
 
 * ReadMe Update
+
+## 1.0.5
+
+* Add int extensions

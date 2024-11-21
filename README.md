@@ -1,36 +1,18 @@
 
-![Logo](https://github.com/sanjaysharmajw/extensions_pro/blob/main/example/assets/extensions_pro.png?raw=true)
-
-
-
-# Extensions Pro
-#### Extensions Pro simplifies your development process, making it faster and more efficient.
-
-
-This Extensions Pro Package empowers you to accelerate your development process, enabling faster and more efficient project completion.
-
-- [Date and Time-Extension](#date-and-time-extension)
-- [Valid URL Extension](#valid-url-extension)
-- [Navigation Extension](#navigation-extension)
-- [Widgets Extension](#widgets-extension)
-
-
-
-
 
 #### Date and Time Extension
 
 ```dart
 //Date Picker
-final dateSelected = await context.pickDate(dateFormatChange: "yyyy-MM-dd"); Output: 2024-11-06
+final dateSelected = await context.pickDate(dateFormatChange: "yyyy-MM-dd"); Output: 2024-11-06 
 
 
 // Time Picker
 TimeOfDay? selectedTime;
 final selectedTimes = await context.pickTime();
-setState(() {
-selectedTime = selectedTimes;
-});
+      setState(() {
+        selectedTime = selectedTimes;
+        });
 
 var output = selectedTime!.format(context);  // 11:08 PM
 
@@ -83,26 +65,26 @@ widget.withShadow(blurRadius: 5.0, color: Colors.grey); // withShadow: Adds a sh
 widget.withRoundedCorners(radius: 12.0); //withRoundedCorners: Applies rounded corners to the widget using ClipRRect.
 
 widget.onTap(() { events. //// onTap: Wraps the widget inside a GestureDetector to detect tap 
-print('Widget tapped!');
+  print('Widget tapped!');
 });
 
 widget.withVisibility(true); // withVisibility: Wraps the widget in a Visibility widget, conditionally hiding it based on the isVisible flag.
 
 // Example
 Text('Hello World!')
-    .withPadding(EdgeInsets.all(16.0))
-    .withBorder(color: Colors.blue, width: 2.0)
-    .withShadow(blurRadius: 8.0, color: Colors.black)
-    .withRoundedCorners(radius: 12.0),
-
+            .withPadding(EdgeInsets.all(16.0))
+            .withBorder(color: Colors.blue, width: 2.0)
+            .withShadow(blurRadius: 8.0, color: Colors.black)
+            .withRoundedCorners(radius: 12.0),
+          
 ElevatedButton(
-onPressed: () {
-print('Button tapped');
-}
-child: Text('Tap Me'),
-).onTap(() {
-print('Button tapped from extension!');
-}),
+            onPressed: () {
+                print('Button tapped');
+            }
+            child: Text('Tap Me'),
+            ).onTap(() {
+              print('Button tapped from extension!');
+            }),
 ```
 
 #### String Extension
@@ -127,20 +109,23 @@ print('flutter'.isPalindrome()); // Check if the string is a palindrome Output:
 print('Order1234'.extractNumbers()); // Extract numbers from a string Output: 1234
 ```
 
+#### Int Extension
 
+```dart
+print(125.toDurationString); // Convert int to duration in minutes and seconds - Output: 2m 5s
 
+print(1990.toRoman); // Convert to Roman numeral - Output: MCMXC
 
+print(1.toOrdinal()); // Convert an integer to its ordinal string - Output: 1st
+print(22.toOrdinal()); // Convert an integer to its ordinal string - Output: 22nd
 
-## Authors
+print(1024.toFileSize()); // To Bytes (KB, MB, GB) - Output: 1.00 KB
+print(1048576.toFileSize()); // To Bytes (KB, MB, GB) - Output: 1.00 MB
 
-- [@sanjaysharmajw](https://github.com/sanjaysharmajw)
+// To convert a numeric value (e.g., rupees) to its word representation in Flutter, you can create an extension on int. Here's how you can achieve it:
+int amount = 123456;
+print('Amount in words: ${amount.toWords()}'); // Amount in words: one lakh twenty-three thousand four hundred fifty-six
 
-
-## 🚀 About Me
-I'm a full stack developer. Cross-Platform Mobile Developer: Android, iOS, Swift , and Flutter Expert
-
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
+int number = 12340; // To convert numbers like 12340 to a short format like 12K, you can create a utility function in Flutter.
+print(number.toShortString()); // Output: 12K
+```

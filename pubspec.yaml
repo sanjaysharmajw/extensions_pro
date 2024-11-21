@@ -1,6 +1,6 @@
 name: extensions_pro
 description: "Extensions Pro simplifies your development process, making it faster and more efficient."
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/sanjaysharmajw/extensions_pro.git
 
 environment:
