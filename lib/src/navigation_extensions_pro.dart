@@ -1,4 +1,4 @@
-part of '../extentions_pro.dart';
+import 'package:flutter/material.dart';
 
 extension NavigationExtension on BuildContext {
   /// Pushes a new screen onto the navigation stack

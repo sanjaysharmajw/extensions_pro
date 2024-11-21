@@ -1,5 +1,3 @@
-part of '../extentions_pro.dart';
-
 extension Validation on String {
   bool isValidEmail() {
     final emailRegex =

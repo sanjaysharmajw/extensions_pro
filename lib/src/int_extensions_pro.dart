@@ -1,5 +1,3 @@
-part of '../extentions_pro.dart';
-
 extension IntExtensions on int {
   String get toDurationString => '${this ~/ 60}m ${this % 60}s';
 

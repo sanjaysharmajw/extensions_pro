@@ -1,14 +1,9 @@
-part of '../extentions_pro.dart';
 
 extension StringExtensions on String {
   String capitalize() {
     return isNotEmpty ? '${this[0].toUpperCase()}${this.substring(1)}' : '';
   }
 
-  bool isValidEmail() {
-    final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
-    return emailRegex.hasMatch(this);
-  }
 
   String reverse() {
     return split('').reversed.join('');

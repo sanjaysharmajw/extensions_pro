@@ -1,5 +1,3 @@
-part of '../extentions_pro.dart';
-
 extension DigitalClockExtensions on DateTime {
   /// Returns time in `HH:mm:ss` format.
   String toDigitalTimeWithSeconds() {
