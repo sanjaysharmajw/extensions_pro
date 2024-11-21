@@ -25,3 +25,7 @@
 ## 1.0.5
 
 * Add int extensions
+
+## 1.0.6
+
+* Add Clock and validation extensions

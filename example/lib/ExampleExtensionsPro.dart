@@ -9,16 +9,29 @@ class ExampleExtensionsPro extends StatefulWidget {
 }
 
 class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
+  String currentTime = DateTime.now().toDigitalTimeWithSeconds();
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, _updateTime);
+  }
+
+  void _updateTime() {
+    setState(() {
+      currentTime = DateTime.now().toDigitalTimeWithSeconds();
+    });
+    Future.delayed(const Duration(seconds: 1), _updateTime);
+  }
+
   @override
   Widget build(BuildContext context) {
-    int number = 100000000;
-    print(number.toShortString()); // Output: 12K
+    int number = 1000;
     return SafeArea(
         child: Scaffold(
       body: Column(
         children: [
-          ElevatedButton(
-              onPressed: () async {}, child:  Text(number.toShortString()))
+          ElevatedButton(onPressed: () async {}, child: Text(currentTime))
         ],
       ),
     ));

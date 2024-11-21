@@ -48,8 +48,9 @@ extension IntExtensions on int {
   String toFileSize() {
     if (this < 1024) return "$this B";
     if (this < 1024 * 1024) return "${(this / 1024).toStringAsFixed(2)} KB";
-    if (this < 1024 * 1024 * 1024)
+    if (this < 1024 * 1024 * 1024) {
       return "${(this / (1024 * 1024)).toStringAsFixed(2)} MB";
+    }
     return "${(this / (1024 * 1024 * 1024)).toStringAsFixed(2)} GB";
   }
 
