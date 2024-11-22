@@ -34,7 +34,7 @@ extension Validation on String {
     int sum = 0;
     bool shouldDouble = false;
 
-    for (int i = this.length - 1; i >= 0; i--) {
+    for (int i = length - 1; i >= 0; i--) {
       int digit = int.parse(this[i]);
       if (shouldDouble) {
         digit *= 2;

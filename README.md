@@ -1,6 +1,5 @@
 
 ![Logo](https://github.com/sanjaysharmajw/extensions_pro/blob/main/example/assets/extensions_pro.png?raw=true)
-
 # Extensions Pro
 
 - ![Pub Publisher](https://img.shields.io/pub/publisher/extensions_pro)
@@ -11,16 +10,14 @@
 
 
 
-
-
-
-
 #### Extensions Pro simplifies your development process, making it faster and more efficient.
 
 
-This Extensions Pro Package empowers you to accelerate your development process, enabling faster and more efficient project completion.
+##### This Extensions Pro Package empowers you to accelerate your development process, enabling faster and more efficient project completion.
 
-- [Date and Time-Extensions](#date-and-time-extensions)
+- [Date and Time Extensions](#date-and-time-extensions)
+- [Image Network Extensions](#image-network-extensions)
+- [Local Image Extensions](#local-image-extensions)
 - [Validation Extensions](#validation-extensions)
 - [Navigation Extensions](#navigation-extensions)
 - [Widgets Extensions](#widgets-extensions)
@@ -57,6 +54,77 @@ final difference = date1.differenceInDays(date2);
 
 Difference in days: difference.inDays  // Output: Difference in days: 4 days
 Total difference in hours: difference.inHours // Output: Total difference in hours: 96 hours
+```
+
+#### Image Network Extensions
+``` dart
+// 1. Network Image with Progress
+ImageNetworkExtensionsPro.networkImageWithProgress(
+    url: 'https://picsum.photos/200',
+    width: 50,
+    height: 50),
+
+// 2. Network Image with Rounded Corners
+ImageNetworkExtensionsPro.networkImageWithRoundedCorners(
+    url: 'https://picsum.photos/200',
+    width: 50,
+    height: 50,
+    borderRadius: 16.0),
+
+ // 3. Network Image with Placeholder
+ImageNetworkExtensionsPro.networkImageWithPlaceholder(
+    url: 'https://picsum.photos/200',
+    width: 50,
+    height: 50,
+    placeholder: const Center(child: Text('Loading...'))),
+
+// 4. Cached Network Image
+ImageNetworkExtensionsPro.cachedNetworkImage(
+    url: 'https://picsum.photos/200',
+    width: 50,
+    height: 50),
+
+// 5. Network Image with Shadow
+ImageNetworkExtensionsPro.networkImageWithShadow(
+    url: 'https://picsum.photos/200',
+    width: 50,
+    height: 50,
+    elevation: 10.0,
+    shadowColor: Colors.black45),
+
+```
+
+#### Local Image Extensions
+
+```dart
+// 1. Image with Progress Indicator and Error Handling
+ImageLocalAssetExtensionsPro.assetImageWithProgress(
+    'assets/extensions_pro.png',
+    width: 150,
+    height: 150,
+loadingWidget: const Center(child: CircularProgressIndicator()), context: context),
+
+// 2. Image with Rounded Corners
+ImageLocalAssetExtensionsPro.assetImageWithRoundedCorners(
+    'assets/extensions_pro.png',
+    width: 150,
+    height: 150,
+    borderRadius: 16.0, context: context),
+
+// 3. Image with Shadow
+ImageLocalAssetExtensionsPro.assetImageWithShadow(
+    'assets/extensions_pro.png',
+    width: 150,
+    height: 150,
+    elevation: 8.0,
+    shadowColor: Colors.blueAccent, context: context),
+
+// 4. Image with Fitted Box for Scaling
+ImageLocalAssetExtensionsPro.assetImageWithFittedBox(
+    'assets/extensions_pro.png',
+    width: 150,
+    height: 150),
+
 ```
 
 #### Validation Extensions

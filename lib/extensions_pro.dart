@@ -7,3 +7,5 @@ export 'src/navigation_extensions_pro.dart';
 export 'src/string_extensions_pro.dart';
 export 'src/validation_extensions_pro.dart';
 export 'src/widgets_extensions_pro.dart';
+export 'src/image_network_extensions_pro.dart';
+export 'src/image_local_extensions_pro.dart';
