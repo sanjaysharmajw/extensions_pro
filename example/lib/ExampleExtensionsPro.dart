@@ -19,7 +19,7 @@ class ExampleExtensionsPro extends StatelessWidget {
           children: [
             // 1. Image with Progress Indicator and Error Handling
             ImageLocalAssetExtensionsPro.assetImageWithProgress(
-              'assets/extensions_pro.png',
+              'assets/extensions_logo.png',
               width: 150,
               height: 150,
               loadingWidget: const Center(child: CircularProgressIndicator()), context: context,
@@ -28,7 +28,7 @@ class ExampleExtensionsPro extends StatelessWidget {
 
             // 2. Image with Rounded Corners
             ImageLocalAssetExtensionsPro.assetImageWithRoundedCorners(
-              'assets/extensions_pro.png',
+              'assets/extensions_logo.png',
               width: 150,
               height: 150,
               borderRadius: 16.0, context: context,
@@ -37,7 +37,7 @@ class ExampleExtensionsPro extends StatelessWidget {
 
             // 3. Image with Shadow
             ImageLocalAssetExtensionsPro.assetImageWithShadow(
-              'assets/extensions_pro.png',
+              'assets/extensions_logo.png',
               width: 150,
               height: 150,
               elevation: 8.0,
@@ -47,7 +47,7 @@ class ExampleExtensionsPro extends StatelessWidget {
 
             // 4. Image with Fitted Box for Scaling
             ImageLocalAssetExtensionsPro.assetImageWithFittedBox(
-              'assets/extensions_pro.png',
+              'assets/extensions_logo.png',
               width: 150,
               height: 150,
             ),
