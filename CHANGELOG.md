@@ -9,3 +9,7 @@
 ## 1.0.12
 
 * Local Image load and Network Image load extensions added
+
+## 1.0.13
+
+* Banner and logo changed
