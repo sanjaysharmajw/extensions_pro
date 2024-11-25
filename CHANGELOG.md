@@ -17,3 +17,7 @@
 ## 1.0.15
 
 * Add Date format and date extensions and Update ReadMe Doc
+
+## 1.0.16
+
+* Add Time extensions

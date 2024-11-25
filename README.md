@@ -15,7 +15,9 @@
 
 ##### This Extensions Pro Package empowers you to accelerate your development process, enabling faster and more efficient project completion.
 
-- [Date and Time Extensions](#date-and-time-extensions)
+- [Date Extensions](#date-extensions)
+- [Time Extensions](#time-extensions)
+- [Clock Extensions](#clock-extensions)
 - [Image Network Extensions](#image-network-extensions)
 - [Local Image Extensions](#local-image-extensions)
 - [Validation Extensions](#validation-extensions)
@@ -23,25 +25,14 @@
 - [Widgets Extensions](#widgets-extensions)
 - [String Extensions](#string-extensions)
 - [Int Extensions](#int-extensions)
-- [Clock Extensions](#clock-extensions)
 
 
 
-#### Date and Time Extensions
+#### Date Extensions
 
 ```dart
 //Date Picker
 final dateSelected = await context.pickDate(dateFormatChange: "yyyy-MM-dd"); Output: 2024-11-06 
-
-
-// Time Picker
-TimeOfDay? selectedTime;
-final selectedTimes = await context.pickTime();
-      setState(() {
-        selectedTime = selectedTimes;
-        });
-
-var output = selectedTime!.format(context);  // 11:08 PM
 
 //Week Day
 int day = 3;
@@ -85,6 +76,60 @@ DateTime date = DateTime.now();
 print(date.weekdayName); // Output: Monday (for example)
 
 
+```
+#### Time Extensions
+
+```dart
+
+// Get the current time
+print("Current Time: ${DateTime.currentTime}");               // Prints the current DateTime object
+
+// Get the current date as a formatted string (e.g., '2024-11-25')
+print("Formatted Date: ${DateTime.currentDateFormatted}");    // e.g., 2024-11-25
+
+// Get the current time as a formatted string (e.g., '14:30')
+print("Formatted Time: ${DateTime.currentTimeFormatted}");    // e.g., 14:30
+
+// Check if the current time is morning (before 12 PM)
+print("Is Morning: ${DateTime.isMorning}");                   // true or false
+
+// Check if the current time is afternoon (12 PM to 6 PM)
+print("Is Afternoon: ${DateTime.isAfternoon}");               // true or false
+
+// Check if the current time is evening (after 6 PM)
+print("Is Evening: ${DateTime.isEvening}");                   // true or false
+
+// Time Picker
+TimeOfDay? selectedTime;
+final selectedTimes = await context.pickTime();
+      setState(() {
+        selectedTime = selectedTimes;
+        });
+
+var output = selectedTime!.format(context);  // 11:08 PM
+
+```
+#### Clock Extensions
+
+```dart
+// Digital Clock Time
+String currentTime = DateTime.now().toDigitalTimeWithSeconds(); // Change toDigitalTime
+ @override
+  void initState() {
+    super.initState();
+    // Update the clock every second
+    Future.delayed(Duration.zero, _updateTime);
+  }
+
+  void _updateTime() {
+    setState(() {
+      currentTime = DateTime.now().toDigitalTimeWithSeconds();
+    });
+    Future.delayed(const Duration(seconds: 1), _updateTime);
+  }
+  print(currentTime); // 11:42:32
+  print(currentTime); // 11:42
+  
 ```
 #### Image Network Extensions
 ``` dart
@@ -314,29 +359,6 @@ print('Amount in words: ${amount.toWords()}'); // Amount in words: one lakh twen
 
 int number = 12340; // To convert numbers like 12340 to a short format like 12K, you can create a utility function in Flutter.
 print(number.toShortString()); // Output: 12K
-```
-
-#### Clock Extensions
-
-```dart
-// Digital Clock Time
-String currentTime = DateTime.now().toDigitalTimeWithSeconds(); // Change toDigitalTime
- @override
-  void initState() {
-    super.initState();
-    // Update the clock every second
-    Future.delayed(Duration.zero, _updateTime);
-  }
-
-  void _updateTime() {
-    setState(() {
-      currentTime = DateTime.now().toDigitalTimeWithSeconds();
-    });
-    Future.delayed(const Duration(seconds: 1), _updateTime);
-  }
-  print(currentTime); // 11:42:32
-  print(currentTime); // 11:42
-  
 ```
 
 
