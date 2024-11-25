@@ -9,3 +9,4 @@ export 'src/validation_extensions_pro.dart';
 export 'src/widgets_extensions_pro.dart';
 export 'src/image_network_extensions_pro.dart';
 export 'src/image_local_extensions_pro.dart';
+export 'src/date_extensions_pro.dart';

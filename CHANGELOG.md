@@ -13,3 +13,7 @@
 ## 1.0.13
 
 * Banner and logo changed
+
+## 1.0.14
+
+* Add Date format and date extensions

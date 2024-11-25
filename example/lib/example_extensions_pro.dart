@@ -1,9 +1,6 @@
 import 'package:extensions_pro/extensions_pro.dart';
 import 'package:flutter/material.dart';
 
-
-//class ExampleExtensionsPro extends StatelessWidget
-
 class ExampleExtensionsPro extends StatelessWidget {
   const ExampleExtensionsPro({super.key});
 
@@ -22,7 +19,8 @@ class ExampleExtensionsPro extends StatelessWidget {
               'assets/extensions_logo.png',
               width: 150,
               height: 150,
-              loadingWidget: const Center(child: CircularProgressIndicator()), context: context,
+              loadingWidget: const Center(child: CircularProgressIndicator()),
+              context: context,
             ),
             const SizedBox(height: 20),
 
@@ -31,7 +29,8 @@ class ExampleExtensionsPro extends StatelessWidget {
               'assets/extensions_logo.png',
               width: 150,
               height: 150,
-              borderRadius: 16.0, context: context,
+              borderRadius: 16.0,
+              context: context,
             ),
             const SizedBox(height: 20),
 
@@ -41,10 +40,10 @@ class ExampleExtensionsPro extends StatelessWidget {
               width: 150,
               height: 150,
               elevation: 8.0,
-              shadowColor: Colors.blueAccent, context: context,
+              shadowColor: Colors.blueAccent,
+              context: context,
             ),
             const SizedBox(height: 20),
-
             // 4. Image with Fitted Box for Scaling
             ImageLocalAssetExtensionsPro.assetImageWithFittedBox(
               'assets/extensions_logo.png',
@@ -57,5 +56,3 @@ class ExampleExtensionsPro extends StatelessWidget {
     );
   }
 }
-
-
