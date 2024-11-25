@@ -14,6 +14,6 @@
 
 * Banner and logo changed
 
-## 1.0.14
+## 1.0.15
 
-* Add Date format and date extensions
+* Add Date format and date extensions and Update ReadMe Doc
