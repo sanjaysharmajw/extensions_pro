@@ -26,6 +26,7 @@
 - [Clock Extensions](#clock-extensions)
 
 
+
 #### Date and Time Extensions
 
 ```dart
@@ -54,8 +55,37 @@ final difference = date1.differenceInDays(date2);
 
 Difference in days: difference.inDays  // Output: Difference in days: 4 days
 Total difference in hours: difference.inHours // Output: Total difference in hours: 96 hours
-```
 
+// Formatting a Date
+DateTime now = DateTime.now();
+print(now.format('yyyy-MM-dd')); // Output: 2024-11-25
+
+// Getting Start and End of Day
+DateTime now = DateTime.now();
+print(now.startOfDay); // Output: 2024-11-25 00:00:00
+print(now.endOfDay);   // Output: 2024-11-25 23:59:59
+
+// Calculating Age
+DateTime birthDate = DateTime(1990, 11, 25);
+print(birthDate.age); // Output: 34 (on 2024-11-25)
+
+// Checking if Date is Today, Yesterday, or Tomorrow
+DateTime date = DateTime.now();
+print(date.isToday); // Output: true
+print(date.isYesterday); // Output: true
+print(date.isTomorrow); // Output: true
+
+// Adding or Subtracting Days, Months, or Years
+DateTime now = DateTime.now();
+print(now.addDays(5)); // 5 days later
+print(now.subtractMonths(1)); // 1 month earlier
+
+// Getting Day of the Week Name
+DateTime date = DateTime.now();
+print(date.weekdayName); // Output: Monday (for example)
+
+
+```
 #### Image Network Extensions
 ``` dart
 // 1. Network Image with Progress
@@ -99,21 +129,21 @@ ImageNetworkExtensionsPro.networkImageWithShadow(
 ```dart
 // 1. Image with Progress Indicator and Error Handling
 ImageLocalAssetExtensionsPro.assetImageWithProgress(
-    'assets/extensions_logo.png',
+    'assets/extensions_pro.png',
     width: 150,
     height: 150,
 loadingWidget: const Center(child: CircularProgressIndicator()), context: context),
 
 // 2. Image with Rounded Corners
 ImageLocalAssetExtensionsPro.assetImageWithRoundedCorners(
-    'assets/extensions_logo.png',
+    'assets/extensions_pro.png',
     width: 150,
     height: 150,
     borderRadius: 16.0, context: context),
 
 // 3. Image with Shadow
 ImageLocalAssetExtensionsPro.assetImageWithShadow(
-    'assets/extensions_logo.png',
+    'assets/extensions_pro.png',
     width: 150,
     height: 150,
     elevation: 8.0,
@@ -121,7 +151,7 @@ ImageLocalAssetExtensionsPro.assetImageWithShadow(
 
 // 4. Image with Fitted Box for Scaling
 ImageLocalAssetExtensionsPro.assetImageWithFittedBox(
-    'assets/extensions_logo.png',
+    'assets/extensions_pro.png',
     width: 150,
     height: 150),
 
