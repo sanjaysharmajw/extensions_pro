@@ -1,11 +1,22 @@
+
 import 'package:extensions_pro/extensions_pro.dart';
 import 'package:flutter/material.dart';
 
-class ExampleExtensionsPro extends StatelessWidget {
+class ExampleExtensionsPro extends StatefulWidget {
   const ExampleExtensionsPro({super.key});
 
   @override
+  State<ExampleExtensionsPro> createState() => _ExampleExtensionsProState();
+}
+
+class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
+  DateTime dateTime = DateTime.now();
+
+
+  @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Image Asset Example'),
@@ -16,17 +27,18 @@ class ExampleExtensionsPro extends StatelessWidget {
           children: [
             // 1. Image with Progress Indicator and Error Handling
             ImageLocalAssetExtensionsPro.assetImageWithProgress(
-              'assets/extensions_logo.png',
+              'assets/extensions_pro.png',
               width: 150,
               height: 150,
               loadingWidget: const Center(child: CircularProgressIndicator()),
-              context: context,
-            ),
+              context: context),
+
+            Text('Current Date: ${125.toDurationString}'),
             const SizedBox(height: 20),
 
             // 2. Image with Rounded Corners
             ImageLocalAssetExtensionsPro.assetImageWithRoundedCorners(
-              'assets/extensions_logo.png',
+              'assets/extensions_pro.png',
               width: 150,
               height: 150,
               borderRadius: 16.0,
@@ -36,7 +48,7 @@ class ExampleExtensionsPro extends StatelessWidget {
 
             // 3. Image with Shadow
             ImageLocalAssetExtensionsPro.assetImageWithShadow(
-              'assets/extensions_logo.png',
+              'assets/extensions_pro.png',
               width: 150,
               height: 150,
               elevation: 8.0,
@@ -46,7 +58,7 @@ class ExampleExtensionsPro extends StatelessWidget {
             const SizedBox(height: 20),
             // 4. Image with Fitted Box for Scaling
             ImageLocalAssetExtensionsPro.assetImageWithFittedBox(
-              'assets/extensions_logo.png',
+              'assets/extensions_pro.png',
               width: 150,
               height: 150,
             ),
@@ -55,4 +67,5 @@ class ExampleExtensionsPro extends StatelessWidget {
       ),
     );
   }
+
 }

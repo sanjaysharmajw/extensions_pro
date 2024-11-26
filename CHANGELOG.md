@@ -21,3 +21,7 @@
 ## 1.0.16
 
 * Add Time extensions
+
+## 1.0.17
+
+* Document Updated

@@ -1,3 +1,4 @@
+
 extension Validation on String {
   bool isValidEmail() {
     final emailRegex =

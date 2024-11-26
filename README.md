@@ -82,22 +82,22 @@ print(date.weekdayName); // Output: Monday (for example)
 ```dart
 
 // Get the current time
-print("Current Time: ${DateTime.currentTime}");               // Prints the current DateTime object
+print("Current Time: ${DateTime.now().currentTime}");               // Prints the current DateTime object
 
 // Get the current date as a formatted string (e.g., '2024-11-25')
-print("Formatted Date: ${DateTime.currentDateFormatted}");    // e.g., 2024-11-25
+print("Formatted Date: ${DateTime.now().currentDateFormatted}");    // e.g., 2024-11-25
 
 // Get the current time as a formatted string (e.g., '14:30')
-print("Formatted Time: ${DateTime.currentTimeFormatted}");    // e.g., 14:30
+print("Formatted Time: ${DateTime.now().currentTimeFormatted}");    // e.g., 14:30
 
 // Check if the current time is morning (before 12 PM)
-print("Is Morning: ${DateTime.isMorning}");                   // true or false
+print("Is Morning: ${DateTime.now().isMorning}");                   // true or false
 
 // Check if the current time is afternoon (12 PM to 6 PM)
-print("Is Afternoon: ${DateTime.isAfternoon}");               // true or false
+print("Is Afternoon: ${DateTime.now().isAfternoon}");               // true or false
 
 // Check if the current time is evening (after 6 PM)
-print("Is Evening: ${DateTime.isEvening}");                   // true or false
+print("Is Evening: ${DateTime.now().isEvening}");                   // true or false
 
 // Time Picker
 TimeOfDay? selectedTime;
