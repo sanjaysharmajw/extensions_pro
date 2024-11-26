@@ -1,22 +1,15 @@
-
 import 'package:extensions_pro/extensions_pro.dart';
 import 'package:flutter/material.dart';
 
 class ExampleExtensionsPro extends StatefulWidget {
   const ExampleExtensionsPro({super.key});
-
   @override
   State<ExampleExtensionsPro> createState() => _ExampleExtensionsProState();
 }
 
 class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
-  DateTime dateTime = DateTime.now();
-
-
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Image Asset Example'),
@@ -27,15 +20,11 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
           children: [
             // 1. Image with Progress Indicator and Error Handling
             ImageLocalExtensionsPro.assetImageWithProgress(
-              'assets/extensions_pro.png',
-              width: 150,
-              height: 150,
-              loadingWidget: const Center(child: CircularProgressIndicator()),
-              context: context),
-
-            Text('Current Date: ${125.toDurationString}'),
-            const SizedBox(height: 20),
-
+                'assets/extensions_pro.png',
+                width: 150,
+                height: 150,
+                loadingWidget: const Center(child: CircularProgressIndicator()),
+                context: context),
             // 2. Image with Rounded Corners
             ImageLocalExtensionsPro.assetImageWithRoundedCorners(
               'assets/extensions_pro.png',
@@ -45,7 +34,6 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
               context: context,
             ),
             const SizedBox(height: 20),
-
             // 3. Image with Shadow
             ImageLocalExtensionsPro.assetImageWithShadow(
               'assets/extensions_pro.png',
@@ -67,5 +55,4 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
       ),
     );
   }
-
 }

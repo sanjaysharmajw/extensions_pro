@@ -1,7 +1,8 @@
 extension ValidationExtensionsPro on String {
   bool isValidEmail() {
-    final emailRegex =
-    RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+    final emailRegex = RegExp(
+      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+    );
     return emailRegex.hasMatch(this);
   }
 
@@ -16,7 +17,9 @@ extension ValidationExtensionsPro on String {
   }
 
   bool isStrongPassword() {
-    final passwordRegex = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$');
+    final passwordRegex = RegExp(
+      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$',
+    );
     return passwordRegex.hasMatch(this);
   }
 
@@ -47,7 +50,9 @@ extension ValidationExtensionsPro on String {
   }
 
   bool isValidHexColor() {
-    final hexColorRegex = RegExp(r'^#?([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$');
+    final hexColorRegex = RegExp(
+      r'^#?([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$',
+    );
     return hexColorRegex.hasMatch(this);
   }
 
