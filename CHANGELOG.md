@@ -29,3 +29,7 @@
 ## 1.0.18
 
 * Document Updated and improvement
+
+## 1.0.19
+
+* Validation bugs solved
