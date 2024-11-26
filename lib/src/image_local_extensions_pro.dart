@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ImageLocalAssetExtensionsPro {
+class ImageLocalExtensionsPro {
   // 1. Image with Progress Indicator and Error Handling
   static Widget assetImageWithProgress(
     String asset, {

@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-extension DateFormatting on DateTime {
+extension DateExtensionsPro on DateTime {
   /// Formatting a Date
   String format(String pattern) {
     return DateFormat(pattern).format(this);

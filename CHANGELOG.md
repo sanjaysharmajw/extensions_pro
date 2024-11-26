@@ -25,3 +25,7 @@
 ## 1.0.17
 
 * Document Updated
+
+## 1.0.18
+
+* Document Updated and improvement

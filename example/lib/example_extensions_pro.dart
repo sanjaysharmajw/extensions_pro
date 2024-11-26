@@ -26,7 +26,7 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // 1. Image with Progress Indicator and Error Handling
-            ImageLocalAssetExtensionsPro.assetImageWithProgress(
+            ImageLocalExtensionsPro.assetImageWithProgress(
               'assets/extensions_pro.png',
               width: 150,
               height: 150,
@@ -37,7 +37,7 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
             const SizedBox(height: 20),
 
             // 2. Image with Rounded Corners
-            ImageLocalAssetExtensionsPro.assetImageWithRoundedCorners(
+            ImageLocalExtensionsPro.assetImageWithRoundedCorners(
               'assets/extensions_pro.png',
               width: 150,
               height: 150,
@@ -47,7 +47,7 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
             const SizedBox(height: 20),
 
             // 3. Image with Shadow
-            ImageLocalAssetExtensionsPro.assetImageWithShadow(
+            ImageLocalExtensionsPro.assetImageWithShadow(
               'assets/extensions_pro.png',
               width: 150,
               height: 150,
@@ -57,7 +57,7 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
             ),
             const SizedBox(height: 20),
             // 4. Image with Fitted Box for Scaling
-            ImageLocalAssetExtensionsPro.assetImageWithFittedBox(
+            ImageLocalExtensionsPro.assetImageWithFittedBox(
               'assets/extensions_pro.png',
               width: 150,
               height: 150,

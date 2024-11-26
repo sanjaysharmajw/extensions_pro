@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension WidgetExtension on Widget {
+extension WidgetsExtensionsPro on Widget {
   /// Adds padding to the widget
   Widget withPadding(EdgeInsetsGeometry padding) {
     return Padding(

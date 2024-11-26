@@ -1,4 +1,4 @@
-extension StringExtensions on String {
+extension StringExtensionsPro on String {
   String capitalize() {
     return isNotEmpty ? '${this[0].toUpperCase()}${substring(1)}' : '';
   }

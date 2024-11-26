@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension NavigationExtension on BuildContext {
+extension NavigationExtensionsPro on BuildContext {
   /// Pushes a new screen onto the navigation stack
   Future<T?> push<T>(Widget page) async {
     return await Navigator.push(

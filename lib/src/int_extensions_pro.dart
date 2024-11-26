@@ -1,4 +1,4 @@
-extension IntExtensions on int {
+extension IntExtensionsPro on int {
   String get toDurationString => '${this ~/ 60}m ${this % 60}s';
 
   String get toRoman {
