@@ -33,3 +33,7 @@
 ## 1.0.19
 
 * Validation bugs solved
+
+## 1.0.20
+
+* Validation bugs solved
