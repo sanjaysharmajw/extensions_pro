@@ -25,6 +25,7 @@
 - [Widgets Extensions](#widgets-extensions)
 - [String Extensions](#string-extensions)
 - [Int Extensions](#int-extensions)
+- [SnackBar Extensions](#snackBar-extensions)
 
 
 
@@ -173,21 +174,21 @@ ImageNetworkExtensionsPro.networkImageWithShadow(
 
 ```dart
 // 1. Image with Progress Indicator and Error Handling
-ImageLocalAssetExtensionsPro.assetImageWithProgress(
+ImageLocalExtensionsPro.assetImageWithProgress(
     'assets/extensions_pro.png',
     width: 150,
     height: 150,
 loadingWidget: const Center(child: CircularProgressIndicator()), context: context),
 
 // 2. Image with Rounded Corners
-ImageLocalAssetExtensionsPro.assetImageWithRoundedCorners(
+ImageLocalExtensionsPro.assetImageWithRoundedCorners(
     'assets/extensions_pro.png',
     width: 150,
     height: 150,
     borderRadius: 16.0, context: context),
 
 // 3. Image with Shadow
-ImageLocalAssetExtensionsPro.assetImageWithShadow(
+ImageLocalExtensionsPro.assetImageWithShadow(
     'assets/extensions_pro.png',
     width: 150,
     height: 150,
@@ -195,7 +196,7 @@ ImageLocalAssetExtensionsPro.assetImageWithShadow(
     shadowColor: Colors.blueAccent, context: context),
 
 // 4. Image with Fitted Box for Scaling
-ImageLocalAssetExtensionsPro.assetImageWithFittedBox(
+ImageLocalExtensionsPro.assetImageWithFittedBox(
     'assets/extensions_pro.png',
     width: 150,
     height: 150),
@@ -365,6 +366,38 @@ print(number.toShortString()); // Output: 12K
 
 
 
+#### SnackBar Extensions
+
+```dart
+// SnackBar for Success and Error
+context.showSuccessSnackBar("Operation successful!");
+context.showErrorSnackBar("An error occurred!");
+
+// SnackBar with Gradient
+context.showGradientSnackBar(context, "message");
+
+// SnackBar with Custom Duration
+context.showPersistentSnackBar( message: 'Message', dismissColor: Colors.white);
+
+// SnackBar with Helper Method
+context.showCustomSnackBar(
+  message: "This is a custom SnackBar!",
+  backgroundColor: Colors.blue,
+  action: SnackBarAction(
+    label: "UNDO",
+    onPressed: () {
+      // Handle action
+    },
+  ),
+);
+
+// SnackBar with Icons
+context.showIconSnackBar(
+  message: "Data saved successfully!",
+  icon: Icons.check_circle,
+  backgroundColor: Colors.green,
+);
+```
 ## Authors
 * [@sanjaysharmajw](https://github.com/sanjaysharmajw)
 

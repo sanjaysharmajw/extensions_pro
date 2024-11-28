@@ -18,38 +18,12 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // 1. Image with Progress Indicator and Error Handling
-            ImageLocalExtensionsPro.assetImageWithProgress(
-                'assets/extensions_pro.png',
-                width: 150,
-                height: 150,
-                loadingWidget: const Center(child: CircularProgressIndicator()),
-                context: context),
-            // 2. Image with Rounded Corners
-            ImageLocalExtensionsPro.assetImageWithRoundedCorners(
-              'assets/extensions_pro.png',
-              width: 150,
-              height: 150,
-              borderRadius: 16.0,
-              context: context,
-            ),
-            const SizedBox(height: 20),
-            // 3. Image with Shadow
-            ImageLocalExtensionsPro.assetImageWithShadow(
-              'assets/extensions_pro.png',
-              width: 150,
-              height: 150,
-              elevation: 8.0,
-              shadowColor: Colors.blueAccent,
-              context: context,
-            ),
-            const SizedBox(height: 20),
-            // 4. Image with Fitted Box for Scaling
-            ImageLocalExtensionsPro.assetImageWithFittedBox(
-              'assets/extensions_pro.png',
-              width: 150,
-              height: 150,
-            ),
+            ElevatedButton(
+                onPressed: () {
+                  context.showPersistentSnackBar(
+                      message: 'Message', dismissColor: Colors.white);
+                },
+                child: const Text("Click"))
           ],
         ),
       ),
