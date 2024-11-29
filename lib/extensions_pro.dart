@@ -12,3 +12,4 @@ export 'src/image_local_extensions_pro.dart';
 export 'src/date_extensions_pro.dart';
 export 'src/time_extensions_pro.dart';
 export 'src/snack_bar_extensions_pro.dart';
+export 'src/list_extensions_pro.dart';

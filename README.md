@@ -26,6 +26,7 @@
 - [String Extensions](#string-extensions)
 - [Int Extensions](#int-extensions)
 - [SnackBar Extensions](#snackBar-extensions)
+- [List Extensions](#list-extensions)
 
 
 
@@ -397,6 +398,48 @@ context.showIconSnackBar(
   icon: Icons.check_circle,
   backgroundColor: Colors.green,
 );
+```
+#### List Extensions
+
+```dart
+final list = [1, 2, 3, 4, 5, 6, 6, 7, 8, 9];
+
+// firstOrDefault
+print(list.firstOrDefault()); // 1
+
+// lastOrDefault
+print(list.lastOrDefault()); // 9
+
+// addIfNotExists
+list.addIfNotExists(10);
+print(list); // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
+
+// removeDuplicates
+print(list.removeDuplicates()); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// safeSublist
+print(list.safeSublist(2, 5)); // [3, 4, 5]
+
+// find
+print(list.find((x) => x > 5)); // 6
+
+ // sortBy
+final names = ['Zara', 'Anna', 'Mike'];
+names.sortBy((name) => name, descending: true);
+print(names); // ['Zara', 'Mike', 'Anna']
+
+// toMap
+final map = list.toMap((x) => x.toString());
+print(map); // {'1': 1, '2': 2, '3': 3, ...}
+
+// ForEachIndexed
+list.forEachIndexed((index, item) {
+    print('Index $index: $item');
+});
+
+// Chunked
+print(list.chunked(3)); // [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
+
 ```
 ## Authors
 * [@sanjaysharmajw](https://github.com/sanjaysharmajw)
