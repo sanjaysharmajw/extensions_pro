@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 extension SnackBarExtensions on BuildContext {
-
   // Custom SnackBar with Helper Method
   void showCustomSnackBar({
     required String message,
@@ -103,5 +102,4 @@ extension SnackBarExtensions on BuildContext {
       ),
     );
   }
-
 }
