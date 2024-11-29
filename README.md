@@ -441,6 +441,39 @@ list.forEachIndexed((index, item) {
 print(list.chunked(3)); // [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
 
 ```
+#### Radio Button Extensions
+![Logo](https://raw.githubusercontent.com/sanjaysharmajw/extensions_pro/main/example/assets/radio_button.png)
+```dart
+Row(
+    children: [
+        const Text('Option 1')
+                .radioButton<String>(
+                value: 'Option 1',
+                activeColor: Colors.green,
+                inactiveColor: Colors.green.shade100,
+                groupValue: selectedValue,
+                onChanged: (value) =>setState(() => selectedValue = value!),
+                ).withPadding(const EdgeInsets.all(10)),
+        const Text('Option 2')
+                .radioButton<String>(
+                activeColor: Colors.green,
+                inactiveColor: Colors.green.shade100,
+                value: 'Option 2',
+                groupValue: selectedValue,
+                onChanged: (value) => setState(() => selectedValue = value!),
+                  ).withPadding(const EdgeInsets.all(10)),
+              const Text('Option 3')
+                  .radioButton<String>(
+                    activeColor: Colors.green,
+                    inactiveColor: Colors.green.shade100,
+                    value: 'Option 3',
+                    groupValue: selectedValue,
+                    onChanged: (value) => setState(() => selectedValue = value!),
+              ).withPadding(const EdgeInsets.all(10)),
+            ],
+          ),
+
+```
 ## Authors
 * [@sanjaysharmajw](https://github.com/sanjaysharmajw)
 
