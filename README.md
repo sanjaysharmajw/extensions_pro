@@ -475,6 +475,25 @@ Row(
           ),
 
 ```
+#### Distance Calculate
+
+```dart
+  const double startLatitude = 28.7041; // Example: Delhi, India
+  const double startLongitude = 77.1025;
+  const double endLatitude = 19.0760; // Example: Mumbai, India
+  const double endLongitude = 72.8777;
+
+  final distance = 0.calculateDistance(
+    startLatitude: startLatitude,
+    startLongitude: startLongitude,
+    endLatitude: endLatitude,
+    endLongitude: endLongitude,
+  );
+
+  print('The distance is ${distance.toStringAsFixed(2)} km.'); // Output: The distance is 1158.91 km.
+
+
+```
 ## Authors
 * [@sanjaysharmajw](https://github.com/sanjaysharmajw)
 

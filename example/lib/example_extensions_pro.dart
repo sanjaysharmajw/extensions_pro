@@ -10,6 +10,17 @@ class ExampleExtensionsPro extends StatefulWidget {
 class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
   @override
   Widget build(BuildContext context) {
+    const double startLatitude = 28.7041; // Example: Delhi, India
+    const double startLongitude = 77.1025;
+    const double endLatitude = 19.0760; // Example: Mumbai, India
+    const double endLongitude = 72.8777;
+
+    final distance = 0.calculateDistance(
+      startLatitude: startLatitude,
+      startLongitude: startLongitude,
+      endLatitude: endLatitude,
+      endLongitude: endLongitude,
+    );
     return Scaffold(
       appBar: AppBar(
         title: const Text('Image Asset Example'),
@@ -19,53 +30,10 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-                onPressed: () {
-                  all();
-                },
-                child: const Text("Click"))
+                onPressed: () {}, child: Text(distance.toStringAsFixed(2)))
           ],
         ),
       ),
     );
   }
-  void all() {
-    final list = [1, 2, 3, 4, 5, 6, 6, 7, 8, 9];
-
-    // 1. firstOrDefault
-    print(list.firstOrDefault()); // 1
-
-    // 2. lastOrDefault
-    print(list.lastOrDefault()); // 9
-
-    // 3. addIfNotExists
-    list.addIfNotExists(10);
-    print(list); // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
-
-    // 4. removeDuplicates
-    print(list.removeDuplicates()); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-    // 5. safeSublist
-    print(list.safeSublist(2, 5)); // [3, 4, 5]
-
-    // 6. find
-    print(list.find((x) => x > 5)); // 6
-
-    // 7. sortBy
-    final names = ['Zara', 'Anna', 'Mike'];
-    names.sortBy((name) => name, descending: true);
-    print(names); // ['Zara', 'Mike', 'Anna']
-
-    // 8. toMap
-    final map = list.toMap((x) => x.toString());
-    print(map); // {'1': 1, '2': 2, '3': 3, ...}
-
-    // 9. forEachIndexed
-    list.forEachIndexed((index, item) {
-      print('Index $index: $item');
-    });
-
-    // 10. chunked
-    print(list.chunked(3)); // [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
-  }
-
 }
