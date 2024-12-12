@@ -28,8 +28,8 @@
 - [SnackBar Extensions](#snackBar-extensions)
 - [List Extensions](#list-extensions)
 - [Radio Button Extensions](#radio-button-extensions)
-- [Distance Calculate](#distance_calculate)
-- [Unit Conversions](#unit_conversions)
+- [Distance Calculate](#distance-calculate)
+- [Unit Conversions](#unit-conversions)
 
 
 
