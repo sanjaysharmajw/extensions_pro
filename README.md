@@ -28,6 +28,8 @@
 - [SnackBar Extensions](#snackBar-extensions)
 - [List Extensions](#list-extensions)
 - [Radio Button Extensions](#radio-button-extensions)
+- [Distance Calculate](#distance_calculate)
+- [Unit Conversions](#unit_conversions)
 
 
 
@@ -492,6 +494,60 @@ Row(
 
   print('The distance is ${distance.toStringAsFixed(2)} km.'); // Output: The distance is 1158.91 km.
 
+
+```
+#### Unit Conversions
+
+```dart
+  print(1000.toKilometers); // 1.0 Kilometers
+  print(100.toKilometersFromMiles); // 160.934 Kilometers
+  print(25.toFahrenheit); // 77.0 Fahrenheit
+  print(77.toCelsius); // 25.0 Celsius
+  print(10000.toAcres); // 2.471 Acres
+  print(100.toSquareMeters); // 9.29 Square Meters
+  print(70.toPounds); // 154.323 Pounds
+  print(154.323.toKilograms); // 70.0 Kilograms
+  print(100.toMilesPerHour); // 62.1371 Miles per Hour
+  print(62.1371.toKilometersPerHour); // 100.0 Kilometers per Hour
+  print(3600.toMinutes); // 60.0 Minutes
+  print(60.toHours); // 1.0 Hour
+  print(48.toDays); // 2.0 Days
+  print(10.toGallons); // 2.64172 Gallons
+  print(2.64172.toLiters); // 10.0 Liters
+  print(1024.toGB); // 1.0 GB
+  print(1.toGBFromTB); // 1024.0 GB
+  print(100000.toBar); // 1.0 Bar
+  print(1.toPascal); // 101325.0 Pascal
+  print(180.toRadians); // 3.14159265359 Radians
+  print(3.14159265359.toDegrees); // 180.0 Degrees
+  print(100.toCalories); // 23.9006 Calories
+  print(23.9006.toJoules); // 100.0 Joules
+  print(100.toEUR); // 92.0 EUR
+  print(92.toUSD); // 100.0 USD
+  print(8200.toUSDFromINR); // 100.0 USD
+  print(20.toLPer100km); // 11.7607 L/100km
+  print(11.7607.toMPG); // 20.0 MPG
+  print(1000.toKbps); // 1000000.0 Kbps
+  print(1000000.toMbps); // 1000.0 Mbps
+  print(1500.toKilowatts); // 1.5 Kilowatts
+  print(1.5.toWatts); // 1500.0 Watts
+  print(2048.toMegabytes); // 2.0 Megabytes
+  print(2.toKilobytes); // 2048.0 Kilobytes
+  print(10.toMetersFromYards); // 9.144 Meters
+  print(10.toMetersFromFeet); // 3.048 Meters
+  print(10.toCentimetersFromInches); // 25.4 Centimeters
+  print(25.4.toInchesFromCentimeters); // 10.0 Inches
+  print(5.toMillivolts); // 5000.0 Millivolts
+  print(5000.toVoltsFromMillivolts); // 5.0 Volts
+  print(1.toTerabytes); // 0.0009765625 Terabytes
+  print(0.0009765625.toGigabytesFromTerabytes); // 1.0 Gigabytes
+  print(2000.toKilowattHours); // 2.0 Kilowatt-Hours
+  print(2.toWattHours); // 2000.0 Watt-Hours
+  print(5.toCubicFeet); // 176.5735 Cubic Feet
+  print(176.5735.toCubicMetersFromCubicFeet); // 5.0 Cubic Meters
+  print(10.toGrams); // 283.495 Ounces
+  print(283.495.toOunces); // 10.0 Grams
+  print(1000.toBytesPerSecond); // 125.0 Bytes per Second
 
 ```
 ## Authors
