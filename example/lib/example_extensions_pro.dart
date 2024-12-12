@@ -10,17 +10,6 @@ class ExampleExtensionsPro extends StatefulWidget {
 class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
   @override
   Widget build(BuildContext context) {
-    const double startLatitude = 28.7041; // Example: Delhi, India
-    const double startLongitude = 77.1025;
-    const double endLatitude = 19.0760; // Example: Mumbai, India
-    const double endLongitude = 72.8777;
-
-    final distance = 0.calculateDistance(
-      startLatitude: startLatitude,
-      startLongitude: startLongitude,
-      endLatitude: endLatitude,
-      endLongitude: endLongitude,
-    );
     return Scaffold(
       appBar: AppBar(
         title: const Text('Image Asset Example'),
@@ -28,9 +17,43 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             ElevatedButton(
-                onPressed: () {}, child: Text(distance.toStringAsFixed(2)))
+              onPressed: () {
+                context.setStatusBarColor(Colors.blue, darkIcons: false);
+              },
+              child: const Text('Set Status Bar Color (Blue)'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.hideStatusBar();
+              },
+              child: const Text('Hide Status Bar'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.showStatusBar();
+              },
+              child: const Text('Show Status Bar'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.setStatusBarBrightness(Brightness.dark);
+              },
+              child: const Text('Set Status Bar Brightness to Dark'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.setStatusBarTextColor(true);
+              },
+              child: const Text('Set Status Bar Text to Dark'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.setStatusBarTextColor(false);
+              },
+              child: const Text('Set Status Bar Text to Light'),
+            ),
           ],
         ),
       ),

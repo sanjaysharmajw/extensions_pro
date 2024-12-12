@@ -28,8 +28,9 @@
 - [SnackBar Extensions](#snackBar-extensions)
 - [List Extensions](#list-extensions)
 - [Radio Button Extensions](#radio-button-extensions)
-- [Distance Calculate](#distance-calculate)
-- [Unit Conversions](#unit-conversions)
+- [Distance Calculate Extensions](#distance-calculate-extensions)
+- [Unit Conversions Extensions](#unit-conversions-extensions)
+- [Status Bar Extensions](#status-bar-extensions)
 
 
 
@@ -477,7 +478,7 @@ Row(
           ),
 
 ```
-#### Distance Calculate
+#### Distance Calculate Extensions
 
 ```dart
   const double startLatitude = 28.7041; // Example: Delhi, India
@@ -496,7 +497,7 @@ Row(
 
 
 ```
-#### Unit Conversions
+#### Unit Conversions Extensions
 
 ```dart
   print(1000.toKilometers); // 1.0 Kilometers
@@ -549,6 +550,25 @@ Row(
   print(283.495.toOunces); // 10.0 Grams
   print(1000.toBytesPerSecond); // 125.0 Bytes per Second
 
+```
+#### Status Bar Extensions
+
+```dart
+//Set Status Bar Color
+context.setStatusBarColor(Colors.blue, darkIcons: false)
+
+//Hide Status Bar
+context.hideStatusBar()
+
+//Show Status Bar
+context.showStatusBar();
+
+//Set Status Bar Brightness
+context.setStatusBarBrightness(Brightness.dark);
+
+//Set Status Bar Text Colo
+context.setStatusBarTextColor(true); // Dark text
+context.setStatusBarTextColor(false); // Light text
 ```
 ## Authors
 * [@sanjaysharmajw](https://github.com/sanjaysharmajw)

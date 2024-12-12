@@ -45,3 +45,7 @@
 ## 1.0.23
 
 * Add Distance According to Lat Lng
+
+## 1.0.24
+
+* Add Unit Conversions, Status Bar
