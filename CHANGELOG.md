@@ -49,3 +49,7 @@
 ## 1.0.24
 
 * Add Unit Conversions, Status Bar
+
+## 1.0.25
+
+* ReadMe update

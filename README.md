@@ -500,56 +500,118 @@ Row(
 #### Unit Conversions Extensions
 
 ```dart
-  print(1000.toKilometers); // 1.0 Kilometers
-  print(100.toKilometersFromMiles); // 160.934 Kilometers
-  print(25.toFahrenheit); // 77.0 Fahrenheit
-  print(77.toCelsius); // 25.0 Celsius
-  print(10000.toAcres); // 2.471 Acres
-  print(100.toSquareMeters); // 9.29 Square Meters
-  print(70.toPounds); // 154.323 Pounds
-  print(154.323.toKilograms); // 70.0 Kilograms
-  print(100.toMilesPerHour); // 62.1371 Miles per Hour
-  print(62.1371.toKilometersPerHour); // 100.0 Kilometers per Hour
-  print(3600.toMinutes); // 60.0 Minutes
-  print(60.toHours); // 1.0 Hour
-  print(48.toDays); // 2.0 Days
-  print(10.toGallons); // 2.64172 Gallons
-  print(2.64172.toLiters); // 10.0 Liters
-  print(1024.toGB); // 1.0 GB
-  print(1.toGBFromTB); // 1024.0 GB
-  print(100000.toBar); // 1.0 Bar
-  print(1.toPascal); // 101325.0 Pascal
-  print(180.toRadians); // 3.14159265359 Radians
-  print(3.14159265359.toDegrees); // 180.0 Degrees
-  print(100.toCalories); // 23.9006 Calories
-  print(23.9006.toJoules); // 100.0 Joules
-  print(100.toEUR); // 92.0 EUR
-  print(92.toUSD); // 100.0 USD
-  print(8200.toUSDFromINR); // 100.0 USD
-  print(20.toLPer100km); // 11.7607 L/100km
-  print(11.7607.toMPG); // 20.0 MPG
-  print(1000.toKbps); // 1000000.0 Kbps
-  print(1000000.toMbps); // 1000.0 Mbps
-  print(1500.toKilowatts); // 1.5 Kilowatts
-  print(1.5.toWatts); // 1500.0 Watts
-  print(2048.toMegabytes); // 2.0 Megabytes
-  print(2.toKilobytes); // 2048.0 Kilobytes
-  print(10.toMetersFromYards); // 9.144 Meters
-  print(10.toMetersFromFeet); // 3.048 Meters
-  print(10.toCentimetersFromInches); // 25.4 Centimeters
-  print(25.4.toInchesFromCentimeters); // 10.0 Inches
-  print(5.toMillivolts); // 5000.0 Millivolts
-  print(5000.toVoltsFromMillivolts); // 5.0 Volts
-  print(1.toTerabytes); // 0.0009765625 Terabytes
-  print(0.0009765625.toGigabytesFromTerabytes); // 1.0 Gigabytes
-  print(2000.toKilowattHours); // 2.0 Kilowatt-Hours
-  print(2.toWattHours); // 2000.0 Watt-Hours
-  print(5.toCubicFeet); // 176.5735 Cubic Feet
-  print(176.5735.toCubicMetersFromCubicFeet); // 5.0 Cubic Meters
-  print(10.toGrams); // 283.495 Ounces
-  print(283.495.toOunces); // 10.0 Grams
-  print(1000.toBytesPerSecond); // 125.0 Bytes per Second
 
+double length = 5000; // Example for Length
+double temperature = 25; // Celsius
+double area = 10000; // Square meters
+double weight = 70; // Kilograms
+double speed = 100; // Kilometers per hour
+double time = 3600; // Seconds
+double volume = 100; // Liters
+double digitalStorage = 2048; // MB
+double energy = 1000; // Joules
+double pressure = 101325; // Pascals
+double angle = 90; // Degrees
+double currency = 100; // USD
+double electricity = 1.5; // Volts
+double fuelEfficiency = 25; // MPG
+double power = 500; // Watts
+double dataRate = 10; // Mbps
+double powerConsumption = 1000; // Watt-hours
+
+// Length conversions
+print('Length Conversions:');
+print('Meters to Kilometers: ${length.toKilometersPro}');
+print('Meters to Miles: ${length.toMilesPro}');
+print('Yards to Meters: ${length.toMetersFromYardsPro}');
+print('Feet to Meters: ${length.toMetersFromFeetPro}');
+print('Inches to Centimeters: ${length.toCentimetersFromInchesPro}');
+print('Centimeters to Inches: ${length.toInchesFromCentimetersPro}');
+
+// Temperature conversions
+print('\nTemperature Conversions:');
+print('Celsius to Fahrenheit: ${temperature.toFahrenheitPro}');
+print('Fahrenheit to Celsius: ${temperature.toCelsiusPro}');
+
+// Area conversions
+print('\nArea Conversions:');
+print('Square Meters to Acres: ${area.toAcresPro}');
+print('Square Feet to Square Meters: ${area.toSquareMetersPro}');
+
+// Weight conversions
+print('\nWeight Conversions:');
+print('Kilograms to Pounds: ${weight.toPoundsPro}');
+print('Pounds to Kilograms: ${weight.toKilogramsPro}');
+print('Ounces to Grams: ${weight.toGramsPro}');
+print('Grams to Ounces: ${weight.toOuncesPro}');
+
+// Speed conversions
+print('\nSpeed Conversions:');
+print('Kilometers per Hour to Miles per Hour: ${speed.toMilesPerHourPro}');
+print('Miles per Hour to Kilometers per Hour: ${speed.toKilometersPerHourPro}');
+
+// Time conversions
+print('\nTime Conversions:');
+print('Seconds to Minutes: ${time.toMinutesPro}');
+print('Minutes to Hours: ${time.toHoursPro}');
+print('Hours to Days: ${time.toDaysPro}');
+
+// Volume conversions
+print('\nVolume Conversions:');
+print('Liters to Gallons: ${volume.toGallonsPro}');
+print('Gallons to Liters: ${volume.toLitersPro}');
+print('Cubic Meters to Cubic Feet: ${volume.toCubicFeetPro}');
+print('Cubic Feet to Cubic Meters: ${volume.toCubicMetersFromCubicFeetPro}');
+
+// Digital storage conversions
+print('\nDigital Storage Conversions:');
+print('MB to GB: ${digitalStorage.toGBPro}');
+print('GB to MB: ${digitalStorage.toMBPro}');
+
+// Energy conversions
+print('\nEnergy Conversions:');
+print('Joules to Calories: ${energy.toCaloriesPro}');
+print('Calories to Joules: ${energy.toJoulesPro}');
+
+// Pressure conversions
+print('\nPressure Conversions:');
+print('Pascals to Bar: ${pressure.toBarPro}');
+print('Atmosphere to Pascal: ${pressure.toPascalPro}');
+
+// Angle conversions
+print('\nAngle Conversions:');
+print('Degrees to Radians: ${angle.toRadiansPro}');
+print('Radians to Degrees: ${angle.toDegreesPro}');
+
+// Currency conversions
+print('\nCurrency Conversions:');
+print('USD to EUR: ${currency.toEURPro}');
+print('EUR to USD: ${currency.toUSDPro}');
+
+// Electricity conversions
+print('\nElectricity Conversions:');
+print('Volts to Millivolts: ${electricity.toMillivoltsPro}');
+print('Millivolts to Volts: ${electricity.toVoltsFromMillivoltsPro}');
+
+// Fuel efficiency
+print('\nFuel Efficiency:');
+print('MPG to L/100km: ${fuelEfficiency.toLPer100kmPro}');
+print('L/100km to MPG: ${fuelEfficiency.toMPGPro}');
+
+// Power conversions
+print('\nPower Conversions:');
+print('Watts to Kilowatts: ${power.toKilowattsPro}');
+print('Kilowatts to Watts: ${power.toWattsPro}');
+
+// Data rate conversions
+print('\nData Rate Conversions:');
+print('Mbps to Kbps: ${dataRate.toKbpsPro}');
+print('Kbps to Mbps: ${dataRate.toMbpsPro}');
+
+// Power consumption
+print('\nPower Consumption:');
+print('Watt-hours to Kilowatt-hours: ${powerConsumption.toKilowattHoursPro}');
+print('Kilowatt-hours to Watt-hours: ${powerConsumption.toWattHoursPro}');
 ```
 #### Status Bar Extensions
 
