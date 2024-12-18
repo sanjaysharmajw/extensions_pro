@@ -53,3 +53,7 @@
 ## 1.0.25
 
 * ReadMe update
+
+* ## 1.0.26
+
+* update code
