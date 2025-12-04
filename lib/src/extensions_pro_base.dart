@@ -3,26 +3,46 @@ import 'package:intl/intl.dart';
 
 /// Date Picker
 extension DatePickerExtension on BuildContext {
-  Future<String?> pickDate(
-      {String dateFormatChange = "dd-MM-yyyy",
-      DateTime? initialDate,
-      DateTime? firstDate,
-      DateTime? lastDate}) async {
+  Future<String?> pickDate({
+    String dateFormatChange = "dd-MM-yyyy",
+    DateTime? initialDate,
+    DateTime? firstDate,
+    DateTime? lastDate,
+    Color primaryColor = Colors.green, // Calendar accent color
+    Color surfaceColor = Colors.white, // Calendar background color
+    Color headerTextColor = Colors.white, // Month-Year text color in header
+  }) async {
     final pickedDate = await showDatePicker(
       context: this,
+
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.light(
+              primary: primaryColor,                   // Selected date, OK button
+              onPrimary: headerTextColor,              // Header text color
+              surface: surfaceColor,                   // Calendar background
+              onSurface: Colors.black,                 // Normal text color
+            ),
+            dialogBackgroundColor: surfaceColor,        // Dialog color
+          ),
+          child: child!,
+        );
+      },
+
       initialDate: initialDate ?? DateTime.now(),
       firstDate: firstDate ?? DateTime(1990),
       lastDate: lastDate ?? DateTime(2100),
     );
 
     if (pickedDate != null) {
-      // Format the picked date to DD-MM-YYYY
-      final DateFormat dateFormat = DateFormat(dateFormatChange.toString());
+      final DateFormat dateFormat = DateFormat(dateFormatChange);
       return dateFormat.format(pickedDate);
     }
     return null;
   }
 }
+
 
 // WeekDay
 extension WeekDayExtension on int {

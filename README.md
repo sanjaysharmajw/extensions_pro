@@ -38,7 +38,7 @@
 
 ```dart
 //Date Picker
-final dateSelected = await context.pickDate(dateFormatChange: "yyyy-MM-dd"); Output: 2024-11-06 
+final dateSelected = await context.pickDate(dateFormatChange: "yyyy-MM-dd",primaryColor: Colors.red,surfaceColor: Colors.white,headerTextColor: Colors.white); Output: 2024-11-06
 
 //Week Day
 int day = 3;

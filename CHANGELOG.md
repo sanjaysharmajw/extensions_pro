@@ -57,3 +57,7 @@
 * ## 1.0.26
 
 * update code
+
+* ## 1.0.27
+
+* Calender Picker Color Change

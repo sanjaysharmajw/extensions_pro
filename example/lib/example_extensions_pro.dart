@@ -8,6 +8,9 @@ class ExampleExtensionsPro extends StatefulWidget {
 }
 
 class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
+
+  String? date;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +56,20 @@ class _ExampleExtensionsProState extends State<ExampleExtensionsPro> {
                 context.setStatusBarTextColor(false);
               },
               child: const Text('Set Status Bar Text to Light'),
+            ),
+            ElevatedButton(
+              onPressed: () async{
+                  date = await context.pickDate(
+                  dateFormatChange: "yyyy-MM-dd",
+                  primaryColor: Colors.red,
+                  surfaceColor: Colors.white,
+                  headerTextColor: Colors.white,
+                );
+setState(() {
+
+});
+              },
+              child:  Text('Date Pick $date'),
             ),
           ],
         ),
