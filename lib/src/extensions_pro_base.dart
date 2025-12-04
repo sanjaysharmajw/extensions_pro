@@ -23,8 +23,7 @@ extension DatePickerExtension on BuildContext {
               onPrimary: headerTextColor,              // Header text color
               surface: surfaceColor,                   // Calendar background
               onSurface: Colors.black,                 // Normal text color
-            ),
-            dialogBackgroundColor: surfaceColor,        // Dialog color
+            ), dialogTheme: DialogThemeData(backgroundColor: surfaceColor),        // Dialog color
           ),
           child: child!,
         );
