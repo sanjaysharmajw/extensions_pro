@@ -1,20 +1,28 @@
+<div align="center">
 
 ![Logo](https://github.com/sanjaysharmajw/extensions_pro/blob/main/example/assets/extensions_pro.png?raw=true)
+
 # Extensions Pro
 
-- ![Pub Publisher](https://img.shields.io/pub/publisher/extensions_pro)
-- ![Pub Points](https://img.shields.io/pub/points/extensions_pro)
-- ![Pub Popularity](https://img.shields.io/pub/popularity/extensions_pro)
-- ![Pub Version](https://img.shields.io/pub/v/extensions_pro)
-- ![Pub Likes](https://img.shields.io/pub/likes/extensions_pro)
+**Supercharge your Flutter development with 60+ powerful, ready-to-use extensions.**
 
+[![Pub Version](https://img.shields.io/pub/v/extensions_pro?color=blue&logo=dart)](https://pub.dev/packages/extensions_pro)
+[![Pub Points](https://img.shields.io/pub/points/extensions_pro)](https://pub.dev/packages/extensions_pro/score)
+[![Pub Popularity](https://img.shields.io/pub/popularity/extensions_pro)](https://pub.dev/packages/extensions_pro)
+[![Pub Likes](https://img.shields.io/pub/likes/extensions_pro)](https://pub.dev/packages/extensions_pro)
+[![Pub Publisher](https://img.shields.io/pub/publisher/extensions_pro)](https://pub.dev/publishers/sanjaysharmajw)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/sanjaysharmajw/extensions_pro/blob/main/LICENSE)
 
+</div>
 
-#### Extensions Pro simplifies your development process, making it faster and more efficient.
+---
 
+Extensions Pro eliminates boilerplate by adding expressive, chainable helpers directly onto Flutter's built-in types — `String`, `int`, `DateTime`, `List`, `Widget`, and `BuildContext`. Write less, ship faster.
 
-##### This Extensions Pro Package empowers you to accelerate your development process, enabling faster and more efficient project completion.
+## Table of Contents
 
+- [Installation](#installation)
+- [Extensions Overview](#extensions-overview)
 - [Date Extensions](#date-extensions)
 - [Time Extensions](#time-extensions)
 - [Clock Extensions](#clock-extensions)
@@ -22,636 +30,616 @@
 - [Local Image Extensions](#local-image-extensions)
 - [Validation Extensions](#validation-extensions)
 - [Navigation Extensions](#navigation-extensions)
-- [Widgets Extensions](#widgets-extensions)
+- [Widget Extensions](#widget-extensions)
 - [String Extensions](#string-extensions)
 - [Int Extensions](#int-extensions)
-- [SnackBar Extensions](#snackBar-extensions)
+- [SnackBar Extensions](#snackbar-extensions)
 - [List Extensions](#list-extensions)
 - [Radio Button Extensions](#radio-button-extensions)
-- [Distance Calculate Extensions](#distance-calculate-extensions)
-- [Unit Conversions Extensions](#unit-conversions-extensions)
+- [Distance Calculator](#distance-calculator)
+- [Unit Conversion Extensions](#unit-conversion-extensions)
 - [Status Bar Extensions](#status-bar-extensions)
+- [Author](#author)
+- [Support](#support)
 
+---
 
+## Installation
 
-#### Date Extensions
+Add to your `pubspec.yaml`:
 
-```dart
-//Date Picker
-final dateSelected = await context.pickDate(dateFormatChange: "yyyy-MM-dd",primaryColor: Colors.red,surfaceColor: Colors.white,headerTextColor: Colors.white); Output: 2024-11-06
-
-//Week Day
-int day = 3;
-var days=day.toWeekDay(); // Output: Wednesday
-var dayHalfName=day.toWeekDay(isHalfName: true); // Output: Wed
-
-//Date Time Difference
-final date1 = DateTime(2024, 11, 19);
-final date2 = DateTime(2024, 11, 15);
-final difference = date1.differenceInDays(date2);
-
-Difference in days: difference.inDays  // Output: Difference in days: 4 days
-Total difference in hours: difference.inHours // Output: Total difference in hours: 96 hours
-
-// Formatting a Date
-DateTime now = DateTime.now();
-print(now.format('yyyy-MM-dd')); // Output: 2024-11-25
-
-// Getting Start and End of Day
-DateTime now = DateTime.now();
-print(now.startOfDay); // Output: 2024-11-25 00:00:00
-print(now.endOfDay);   // Output: 2024-11-25 23:59:59
-
-// Calculating Age
-DateTime birthDate = DateTime(1990, 11, 25);
-print(birthDate.age); // Output: 34 (on 2024-11-25)
-
-// Checking if Date is Today, Yesterday, or Tomorrow
-DateTime date = DateTime.now();
-print(date.isToday); // Output: true
-print(date.isYesterday); // Output: true
-print(date.isTomorrow); // Output: true
-
-// Adding or Subtracting Days, Months, or Years
-DateTime now = DateTime.now();
-print(now.addDays(5)); // 5 days later
-print(now.subtractMonths(1)); // 1 month earlier
-
-// Getting Day of the Week Name
-DateTime date = DateTime.now();
-print(date.weekdayName); // Output: Monday (for example)
-
-
+```yaml
+dependencies:
+  extensions_pro: ^1.0.28
 ```
-#### Time Extensions
+
+Then import in your Dart file:
 
 ```dart
+import 'package:extensions_pro/extensions_pro.dart';
+```
 
-// Get the current time
-print("Current Time: ${DateTime.now().currentTime}");               // Prints the current DateTime object
+---
 
-// Get the current date as a formatted string (e.g., '2024-11-25')
-print("Formatted Date: ${DateTime.now().currentDateFormatted}");    // e.g., 2024-11-25
+## Extensions Overview
 
-// Get the current time as a formatted string (e.g., '14:30')
-print("Formatted Time: ${DateTime.now().currentTimeFormatted}");    // e.g., 14:30
+| Category | Extension Type | Highlights |
+|---|---|---|
+| Date | `DateTime` | format, age, pickers, date math |
+| Time | `DateTime` | formatted strings, morning/afternoon/evening |
+| Clock | `DateTime` | digital clock strings |
+| Image (Network) | `ImageNetworkExtensionsPro` | progress, rounded, cached, shadow |
+| Image (Local) | `ImageLocalExtensionsPro` | progress, rounded, shadow, fitted box |
+| Validation | `String` | email, phone, password, OTP, card, hex |
+| Navigation | `BuildContext` | push, pop, replace, clear stack |
+| Widget | `Widget` | padding, border, shadow, rounded, tap |
+| String | `String` | capitalize, reverse, palindrome, camelCase |
+| Int | `int` | roman, ordinal, words, file size, short |
+| SnackBar | `BuildContext` | success, error, gradient, icon, persistent |
+| List | `List<T>` | sort, find, chunk, dedup, toMap |
+| Radio Button | `Widget` | custom radio button wrapper |
+| Distance | `num` | Haversine geo distance (km) |
+| Unit Conversion | `num` | 15 categories, 60+ conversions |
+| Status Bar | `BuildContext` | color, brightness, show/hide |
 
-// Check if the current time is morning (before 12 PM)
-print("Is Morning: ${DateTime.now().isMorning}");                   // true or false
+---
 
-// Check if the current time is afternoon (12 PM to 6 PM)
-print("Is Afternoon: ${DateTime.now().isAfternoon}");               // true or false
+## Date Extensions
 
-// Check if the current time is evening (after 6 PM)
-print("Is Evening: ${DateTime.now().isEvening}");                   // true or false
+```dart
+// Date Picker
+final date = await context.pickDate(
+  dateFormatChange: 'yyyy-MM-dd',
+  primaryColor: Colors.red,
+  surfaceColor: Colors.white,
+  headerTextColor: Colors.white,
+);
+// Output: "2024-11-06"
+
+// Weekday from int (1 = Monday … 7 = Sunday)
+3.toWeekDay();                    // "Wednesday"
+3.toWeekDay(isHalfName: true);    // "Wed"
+
+// Difference between two dates
+final diff = DateTime(2024, 11, 19).differenceInDays(DateTime(2024, 11, 15));
+diff.inDays;   // 4
+diff.inHours;  // 96
+
+// Format
+DateTime.now().format('yyyy-MM-dd');   // "2024-11-25"
+DateTime.now().format('dd MMM yyyy');  // "25 Nov 2024"
+
+// Start / End of day
+DateTime.now().startOfDay;  // 2024-11-25 00:00:00
+DateTime.now().endOfDay;    // 2024-11-25 23:59:59
+
+// Age
+DateTime(1990, 11, 25).age;  // 34
+
+// Relative checks
+DateTime.now().isToday;      // true
+DateTime.now().isYesterday;  // false
+DateTime.now().isTomorrow;   // false
+
+// Date arithmetic
+DateTime.now().addDays(5);        // 5 days later
+DateTime.now().subtractDays(10);  // 10 days earlier
+DateTime.now().addMonths(3);      // 3 months later
+DateTime.now().subtractYears(1);  // 1 year earlier
+
+// Day name
+DateTime.now().weekdayName;  // "Monday"
+```
+
+---
+
+## Time Extensions
+
+```dart
+// Formatted strings
+DateTime.now().currentDateFormatted;  // "2024-11-25"
+DateTime.now().currentTimeFormatted;  // "14:30"
+
+// Time-of-day checks
+DateTime.now().isMorning;    // true  (before 12 PM)
+DateTime.now().isAfternoon;  // false (12 PM – 6 PM)
+DateTime.now().isEvening;    // false (after 6 PM)
 
 // Time Picker
-TimeOfDay? selectedTime;
-final selectedTimes = await context.pickTime();
-      setState(() {
-        selectedTime = selectedTimes;
-        });
-
-var output = selectedTime!.format(context);  // 11:08 PM
-
+final picked = await context.pickTime();
+picked?.format(context);  // "11:08 PM"
 ```
-#### Clock Extensions
+
+---
+
+## Clock Extensions
 
 ```dart
-// Digital Clock Time
-String currentTime = DateTime.now().toDigitalTimeWithSeconds(); // Change toDigitalTime
- @override
-  void initState() {
-    super.initState();
-    // Update the clock every second
-    Future.delayed(Duration.zero, _updateTime);
-  }
-
-  void _updateTime() {
-    setState(() {
-      currentTime = DateTime.now().toDigitalTimeWithSeconds();
-    });
-    Future.delayed(const Duration(seconds: 1), _updateTime);
-  }
-  print(currentTime); // 11:42:32
-  print(currentTime); // 11:42
-  
+// Live digital clock — call inside a Timer.periodic(Duration(seconds: 1), ...)
+DateTime.now().toDigitalTimeWithSeconds();  // "11:42:32"
+DateTime.now().toDigitalTime();             // "11:42"
 ```
-#### Image Network Extensions
-``` dart
-// 1. Network Image with Progress
+
+---
+
+## Image Network Extensions
+
+```dart
+// With progress indicator
 ImageNetworkExtensionsPro.networkImageWithProgress(
-    url: 'https://picsum.photos/200',
-    width: 50,
-    height: 50),
-
-// 2. Network Image with Rounded Corners
-ImageNetworkExtensionsPro.networkImageWithRoundedCorners(
-    url: 'https://picsum.photos/200',
-    width: 50,
-    height: 50,
-    borderRadius: 16.0),
-
- // 3. Network Image with Placeholder
-ImageNetworkExtensionsPro.networkImageWithPlaceholder(
-    url: 'https://picsum.photos/200',
-    width: 50,
-    height: 50,
-    placeholder: const Center(child: Text('Loading...'))),
-
-// 4. Cached Network Image
-ImageNetworkExtensionsPro.cachedNetworkImage(
-    url: 'https://picsum.photos/200',
-    width: 50,
-    height: 50),
-
-// 5. Network Image with Shadow
-ImageNetworkExtensionsPro.networkImageWithShadow(
-    url: 'https://picsum.photos/200',
-    width: 50,
-    height: 50,
-    elevation: 10.0,
-    shadowColor: Colors.black45),
-
-```
-
-#### Local Image Extensions
-
-```dart
-// 1. Image with Progress Indicator and Error Handling
-ImageLocalExtensionsPro.assetImageWithProgress(
-    'assets/extensions_pro.png',
-    width: 150,
-    height: 150,
-loadingWidget: const Center(child: CircularProgressIndicator()), context: context),
-
-// 2. Image with Rounded Corners
-ImageLocalExtensionsPro.assetImageWithRoundedCorners(
-    'assets/extensions_pro.png',
-    width: 150,
-    height: 150,
-    borderRadius: 16.0, context: context),
-
-// 3. Image with Shadow
-ImageLocalExtensionsPro.assetImageWithShadow(
-    'assets/extensions_pro.png',
-    width: 150,
-    height: 150,
-    elevation: 8.0,
-    shadowColor: Colors.blueAccent, context: context),
-
-// 4. Image with Fitted Box for Scaling
-ImageLocalExtensionsPro.assetImageWithFittedBox(
-    'assets/extensions_pro.png',
-    width: 150,
-    height: 150),
-
-```
-
-#### Validation Extensions
-
-```dart
-final url1 = "https://www.example.com";
-final url3 = "htp:/invalid-url";
-final url4 = "https://sub.domain.co.uk/path";
-
-print("Is '$url1' a valid URL? ${url1.isValidUrl()}"); // Output: true
-print("Is '$url3' a valid URL? ${url3.isValidUrl()}"); // Output: false
-
-String email = 'test@example.com'; 
-print(email.isValidEmail()); // Email Validation - Output: true
-
-String phone = '+1234567890';
-print(phone.isValidPhoneNumber()); // Phone Number Validation - Output: true
-
-String password = 'Password123';
-print(password.isStrongPassword()); // Password Strength Validation (At least one uppercase, one lowercase, one digit) - Output: true
-
-String numericValue = '123456';
-print(numericValue.isNumeric()); // Numeric Validation - Output: true
-
-String input = 'abc123';
-print(input.isAlphaNumeric()); // Alpha Numeric Validation - Output: true
-
-String creditCard = '4532015112830366';
-print(creditCard.isValidCreditCardNumber()); // Credit Card Number Validation (Luhn Algorithm) - Output: true
-
-String hexColor = '#FF5733';
-print(hexColor.isValidHexColor()); // Hexadecimal Color Validation - Output: true
-
-// Example OTPs
-String otp1 = '123456'; // Valid OTP
-String otp2 = '12345a'; // Invalid OTP (contains a letter)
-String otp3 = '123';    // Invalid OTP (too short)
-  
-// Validating OTPs
-print('Is OTP 1 valid? ${otp1.isValidOTP()}'); // Output: true
-print('Is OTP 2 valid? ${otp2.isValidOTP()}'); // Output: false
-print('Is OTP 3 valid? ${otp3.isValidOTP()}'); // Output: false
-
-// Example coordinates (Lat, Long)
-String latitude1 = '37.7749'; // Valid Latitude
-String longitude1 = '-122.4194'; // Valid Longitude
-
-String latitude2 = '100.0000'; // Invalid Latitude (out of range)
-String longitude2 = '200.0000'; // Invalid Longitude (out of range)
-
-// Validating Latitude and Longitude
-print('Is Latitude 1 valid? ${latitude1.isValidLatitude()}'); // Output: true
-print('Is Longitude 1 valid? ${longitude1.isValidLongitude()}'); // Output: true
-
-print('Is Latitude 2 valid? ${latitude2.isValidLatitude()}'); // Output: false
-print('Is Longitude 2 valid? ${longitude2.isValidLongitude()}'); // Output: false
-
-
-// Password Match Validation Extension
-
-String password = 'Password123';
-String confirmPassword = 'Password123';
-
-bool isMatch = password.isPasswordMatch(confirmPassword);
-print('Do the passwords match? $isMatch'); // Output: true
-
-confirmPassword = 'Password124';
-isMatch = password.isPasswordMatch(confirmPassword);
-print('Do the passwords match? $isMatch'); // Output: false
-
-
-
-
-```
-
-
-#### Navigation Extensions
-
-```dart
-context.push(SecondScreen());   // Push a new Screen
-context.pushReplacement(SecondScreen()); // Push and Replace Current Screen
-context.pop(); // Pop the Current Screen 
-context.pushAndRemoveUntil(HomeScreen()); // Push and Clear Navigation Stack
-```
-
-#### Widgets Extensions
-
-```dart
-widget.withPadding(EdgeInsets.all(8.0)); //withPadding: Wraps the widget in a Padding widget to apply padding around it.
-widget.withMargin(EdgeInsets.all(8.0)); // withMargin: Wraps the widget in a Container and applies margin.
-widget.centered(); // centered: Centers the widget inside a Center widget.
-widget.withBorder(color: Colors.blue, width: 2.0); // withBorder: Adds a border around the widget by wrapping it inside a Container with a BoxDecoration.
-widget.withShadow(blurRadius: 5.0, color: Colors.grey); // withShadow: Adds a shadow to the widget by wrapping it in a Material widget.
-widget.withRoundedCorners(radius: 12.0); //withRoundedCorners: Applies rounded corners to the widget using ClipRRect.
-
-widget.onTap(() { events. //// onTap: Wraps the widget inside a GestureDetector to detect tap 
-  print('Widget tapped!');
-});
-
-widget.withVisibility(true); // withVisibility: Wraps the widget in a Visibility widget, conditionally hiding it based on the isVisible flag.
-
-// Example
-Text('Hello World!')
-            .withPadding(EdgeInsets.all(16.0))
-            .withBorder(color: Colors.blue, width: 2.0)
-            .withShadow(blurRadius: 8.0, color: Colors.black)
-            .withRoundedCorners(radius: 12.0),
-          
-ElevatedButton(
-            onPressed: () {
-                print('Button tapped');
-            }
-            child: Text('Tap Me'),
-            ).onTap(() {
-              print('Button tapped from extension!');
-            }),
-```
-
-#### String Extensions
-
-```dart
-print('flutter'.capitalize()); // Capitalize the first letter Output: Flutter
-print('test@example.com'.isValidEmail()); // Check if the string is a valid email Output: true
-
-print('invalid-email'.isValidEmail()); // Check if the string is a valid emailOutput: false
-print('flutter'.reverse()); // Reverse the string Output: rettulf
-print('123'.isNumeric());  // Check if the string is numeric Output: true
-print('abc'.isNumeric());  // Check if the string is numeric Output: false
-
-print('Flutter is awesome'.removeWhitespace()); // Remove all whitespace Output: Flutterisawesome
-print('Flutter is amazing'.truncate(10)); // Truncate the string with ellipsis Output: Flutter is...
-
-print('snake_case_string'.toCamelCase()); // Convert snake_case to camelCase Output: SnakeCaseString
-print('flutter is fun'.countOccurrences('u')); // Count occurrences of a character Output: 2
-
-print('madam'.isPalindrome()); // Check if the string is a palindrome Output: true
-print('flutter'.isPalindrome()); // Check if the string is a palindrome Output: 
-print('Order1234'.extractNumbers()); // Extract numbers from a string Output: 1234
-```
-
-#### Int Extensions
-
-```dart
-print(125.toDurationString); // Convert int to duration in minutes and seconds - Output: 2m 5s
-
-print(1990.toRoman); // Convert to Roman numeral - Output: MCMXC
-
-print(1.toOrdinal()); // Convert an integer to its ordinal string - Output: 1st
-print(22.toOrdinal()); // Convert an integer to its ordinal string - Output: 22nd
-
-print(1024.toFileSize()); // To Bytes (KB, MB, GB) - Output: 1.00 KB
-print(1048576.toFileSize()); // To Bytes (KB, MB, GB) - Output: 1.00 MB
-
-// To convert a numeric value (e.g., rupees) to its word representation in Flutter, you can create an extension on int. Here's how you can achieve it:
-int amount = 123456;
-print('Amount in words: ${amount.toWords()}'); // Amount in words: one lakh twenty-three thousand four hundred fifty-six
-
-int number = 12340; // To convert numbers like 12340 to a short format like 12K, you can create a utility function in Flutter.
-print(number.toShortString()); // Output: 12K
-```
-
-
-
-
-
-#### SnackBar Extensions
-
-```dart
-// SnackBar for Success and Error
-context.showSuccessSnackBar("Operation successful!");
-context.showErrorSnackBar("An error occurred!");
-
-// SnackBar with Gradient
-context.showGradientSnackBar(context, "message");
-
-// SnackBar with Custom Duration
-context.showPersistentSnackBar( message: 'Message', dismissColor: Colors.white);
-
-// SnackBar with Helper Method
-context.showCustomSnackBar(
-  message: "This is a custom SnackBar!",
-  backgroundColor: Colors.blue,
-  action: SnackBarAction(
-    label: "UNDO",
-    onPressed: () {
-      // Handle action
-    },
-  ),
+  url: 'https://picsum.photos/200',
+  width: 100,
+  height: 100,
+  fit: BoxFit.cover,
 );
 
-// SnackBar with Icons
+// With rounded corners
+ImageNetworkExtensionsPro.networkImageWithRoundedCorners(
+  url: 'https://picsum.photos/200',
+  width: 100,
+  height: 100,
+  borderRadius: 16.0,
+);
+
+// With placeholder widget
+ImageNetworkExtensionsPro.networkImageWithPlaceholder(
+  url: 'https://picsum.photos/200',
+  width: 100,
+  height: 100,
+  placeholder: const Center(child: Text('Loading...')),
+);
+
+// Cached (uses cached_network_image)
+ImageNetworkExtensionsPro.cachedNetworkImage(
+  url: 'https://picsum.photos/200',
+  width: 100,
+  height: 100,
+);
+
+// With drop shadow
+ImageNetworkExtensionsPro.networkImageWithShadow(
+  url: 'https://picsum.photos/200',
+  width: 100,
+  height: 100,
+  elevation: 10.0,
+  shadowColor: Colors.black45,
+);
+```
+
+---
+
+## Local Image Extensions
+
+```dart
+// With progress indicator and error handling
+ImageLocalExtensionsPro.assetImageWithProgress(
+  'assets/logo.png',
+  context: context,
+  width: 150,
+  height: 150,
+);
+
+// With rounded corners
+ImageLocalExtensionsPro.assetImageWithRoundedCorners(
+  'assets/logo.png',
+  context: context,
+  width: 150,
+  height: 150,
+  borderRadius: 16.0,
+);
+
+// With shadow
+ImageLocalExtensionsPro.assetImageWithShadow(
+  'assets/logo.png',
+  context: context,
+  width: 150,
+  height: 150,
+  elevation: 8.0,
+  shadowColor: Colors.blueAccent,
+);
+
+// Scaled with FittedBox
+ImageLocalExtensionsPro.assetImageWithFittedBox(
+  'assets/logo.png',
+  width: 150,
+  height: 150,
+);
+```
+
+---
+
+## Validation Extensions
+
+```dart
+// Email
+'user@example.com'.isValidEmail();    // true
+'invalid-email'.isValidEmail();       // false
+
+// Phone (E.164 format)
+'+1234567890'.isValidPhoneNumber();   // true
+
+// Password (min 8 chars, upper + lower + digit)
+'Flutter@123'.isStrongPassword();     // true
+'weak'.isStrongPassword();            // false
+
+// Password match
+'Pass123'.isPasswordMatch('Pass123'); // true
+'Pass123'.isPasswordMatch('pass123'); // false
+
+// OTP (exactly 6 digits)
+'123456'.isValidOTP();  // true
+'12345a'.isValidOTP();  // false
+
+// Credit card (Luhn algorithm — handles spaces/dashes)
+'4532015112830366'.isValidCreditCardNumber();    // true
+'4532 0151 1283 0366'.isValidCreditCardNumber(); // true
+
+// Hex color
+'#FF5733'.isValidHexColor();  // true
+'ZZZ'.isValidHexColor();      // false
+
+// Digits only (no decimals or signs)
+'123456'.isDigitsOnly();  // true
+'12.34'.isDigitsOnly();   // false
+
+// Alphanumeric
+'Abc123'.isAlphaNumeric();   // true
+'Abc@123'.isAlphaNumeric();  // false
+
+// Geo coordinates
+'37.7749'.isValidLatitude();    // true
+'100.0'.isValidLatitude();      // false  (out of range)
+'-122.4194'.isValidLongitude(); // true
+'200.0'.isValidLongitude();     // false
+
+// URL
+'https://flutter.dev'.isValidUrl();  // true
+'not a url'.isValidUrl();            // false
+```
+
+---
+
+## Navigation Extensions
+
+```dart
+// Push a new screen
+context.push(const DetailScreen());
+
+// Replace the current screen
+context.pushReplacement(const HomeScreen());
+
+// Pop back
+context.pop();
+
+// Pop with a result
+context.pop('result');
+
+// Clear the entire stack and push a new screen
+context.pushAndRemoveUntil(const LoginScreen());
+```
+
+---
+
+## Widget Extensions
+
+All extensions are chainable:
+
+```dart
+// Individual usage
+Text('Hello').withPadding(const EdgeInsets.all(16));
+Text('Hello').withMargin(const EdgeInsets.all(8));
+Text('Hello').centered();
+Text('Hello').withBorder(color: Colors.blue, width: 2.0);
+Text('Hello').withShadow(blurRadius: 8.0, color: Colors.black26);
+Text('Hello').withRoundedCorners(radius: 12.0);
+Text('Hello').withVisibility(isLoggedIn);
+Text('Hello').onTap(() => print('tapped'));
+
+// Chained
+Text('Hello World')
+  .withPadding(const EdgeInsets.all(16))
+  .withBorder(color: Colors.blue, width: 2.0)
+  .withShadow(blurRadius: 8.0)
+  .withRoundedCorners(radius: 12.0);
+```
+
+---
+
+## String Extensions
+
+```dart
+'flutter'.capitalize();                    // "Flutter"
+'flutter'.reverse();                       // "rettulf"
+'snake_case_string'.toCamelCase();         // "SnakeCaseString"
+'Flutter is awesome'.removeWhitespace();   // "FlutterisAwesome"  — wait, removes spaces
+'Flutter is amazing'.truncate(10);         // "Flutter is..."
+'Order1234'.extractNumbers();              // "1234"
+'madam'.isPalindrome();                    // true
+'flutter'.isPalindrome();                  // false
+'flutter is fun'.countOccurrences('u');    // 2
+'123'.isNumeric();                         // true  (parses as double)
+'abc'.isNumeric();                         // false
+```
+
+---
+
+## Int Extensions
+
+```dart
+// Duration string
+125.toDurationString;   // "2m 5s"
+
+// Roman numerals (1–3999)
+1990.toRoman;           // "MCMXC"
+4.toRoman;              // "IV"
+
+// Ordinal
+1.toOrdinal();          // "1st"
+22.toOrdinal();         // "22nd"
+103.toOrdinal();        // "103rd"
+11.toOrdinal();         // "11th"
+
+// File size
+1024.toFileSize();      // "1.00 KB"
+1048576.toFileSize();   // "1.00 MB"
+512.toFileSize();       // "512 B"
+
+// Short format
+12340.toShortString();    // "12.3K"
+1200000.toShortString();  // "1.2M"
+
+// Number to words (Indian system)
+1234.toWords();           // "one thousand two hundred thirty four"
+100000.toWords();         // "one lakh"
+10000000.toWords();       // "one crore"
+
+// Weekday name (1 = Monday, 7 = Sunday)
+3.toWeekDay();                 // "Wednesday"
+3.toWeekDay(isHalfName: true); // "Wed"
+```
+
+---
+
+## SnackBar Extensions
+
+```dart
+// Success (green)
+context.showSuccessSnackBar('Saved successfully!');
+
+// Error (red)
+context.showErrorSnackBar('Something went wrong!');
+
+// Custom color and duration
+context.showCustomSnackBar(
+  message: 'Custom message',
+  backgroundColor: Colors.indigo,
+  duration: const Duration(seconds: 4),
+  action: SnackBarAction(label: 'UNDO', onPressed: () {}),
+);
+
+// With icon
 context.showIconSnackBar(
-  message: "Data saved successfully!",
+  message: 'Data saved!',
   icon: Icons.check_circle,
   backgroundColor: Colors.green,
 );
+
+// Gradient (purple → blue)
+context.showGradientSnackBar('Beautiful gradient!');
+
+// Persistent (stays until dismissed)
+context.showPersistentSnackBar(
+  message: 'Tap DISMISS to close.',
+  dismissColor: Colors.white,
+);
 ```
-#### List Extensions
+
+---
+
+## List Extensions
 
 ```dart
-final list = [1, 2, 3, 4, 5, 6, 6, 7, 8, 9];
+final numbers = [1, 2, 3, 4, 5, 6, 6, 7, 8, 9];
 
-// firstOrDefault
-print(list.firstOrDefault()); // 1
+numbers.firstOrDefault();         // 1
+numbers.lastOrDefault();          // 9
 
-// lastOrDefault
-print(list.lastOrDefault()); // 9
+numbers.addIfNotExists(10);       // adds 10 only if not present
+numbers.removeDuplicates();       // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-// addIfNotExists
-list.addIfNotExists(10);
-print(list); // [1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10]
+numbers.safeSublist(2, 5);        // [3, 4, 5]  — no RangeError
+numbers.find((x) => x > 5);      // 6
 
-// removeDuplicates
-print(list.removeDuplicates()); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-// safeSublist
-print(list.safeSublist(2, 5)); // [3, 4, 5]
-
-// find
-print(list.find((x) => x > 5)); // 6
-
- // sortBy
+// Sort by property
 final names = ['Zara', 'Anna', 'Mike'];
-names.sortBy((name) => name, descending: true);
-print(names); // ['Zara', 'Mike', 'Anna']
+names.sortBy((n) => n);                        // ['Anna', 'Mike', 'Zara']
+names.sortBy((n) => n, descending: true);      // ['Zara', 'Mike', 'Anna']
 
-// toMap
-final map = list.toMap((x) => x.toString());
-print(map); // {'1': 1, '2': 2, '3': 3, ...}
+// Convert to map
+numbers.toMap((x) => x.toString());
+// {'1': 1, '2': 2, '3': 3, ...}
 
-// ForEachIndexed
-list.forEachIndexed((index, item) {
-    print('Index $index: $item');
+// Indexed iteration
+numbers.forEachIndexed((index, item) {
+  print('[$index] $item');
 });
 
-// Chunked
-print(list.chunked(3)); // [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
-
+// Split into chunks
+numbers.chunked(3);
+// [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
 ```
-#### Radio Button Extensions
-![Logo](https://raw.githubusercontent.com/sanjaysharmajw/extensions_pro/main/example/assets/radio_button.png)
-```dart
-Row(
-    children: [
-        const Text('Option 1')
-                .radioButton<String>(
-                value: 'Option 1',
-                activeColor: Colors.green,
-                inactiveColor: Colors.green.shade100,
-                groupValue: selectedValue,
-                onChanged: (value) =>setState(() => selectedValue = value!),
-                ).withPadding(const EdgeInsets.all(10)),
-        const Text('Option 2')
-                .radioButton<String>(
-                activeColor: Colors.green,
-                inactiveColor: Colors.green.shade100,
-                value: 'Option 2',
-                groupValue: selectedValue,
-                onChanged: (value) => setState(() => selectedValue = value!),
-                  ).withPadding(const EdgeInsets.all(10)),
-              const Text('Option 3')
-                  .radioButton<String>(
-                    activeColor: Colors.green,
-                    inactiveColor: Colors.green.shade100,
-                    value: 'Option 3',
-                    groupValue: selectedValue,
-                    onChanged: (value) => setState(() => selectedValue = value!),
-              ).withPadding(const EdgeInsets.all(10)),
-            ],
-          ),
 
-```
-#### Distance Calculate Extensions
+---
+
+## Radio Button Extensions
+
+![Radio Button Preview](https://raw.githubusercontent.com/sanjaysharmajw/extensions_pro/main/example/assets/radio_button.png)
+
+Attach a custom radio indicator to **any widget**:
 
 ```dart
-  const double startLatitude = 28.7041; // Example: Delhi, India
-  const double startLongitude = 77.1025;
-  const double endLatitude = 19.0760; // Example: Mumbai, India
-  const double endLongitude = 72.8777;
+String _selected = 'Option 1';
 
-  final distance = 0.calculateDistance(
-    startLatitude: startLatitude,
-    startLongitude: startLongitude,
-    endLatitude: endLatitude,
-    endLongitude: endLongitude,
-  );
-
-  print('The distance is ${distance.toStringAsFixed(2)} km.'); // Output: The distance is 1158.91 km.
-
-
+Column(
+  children: ['Option 1', 'Option 2', 'Option 3'].map((option) =>
+    Text(option)
+      .radioButton<String>(
+        value: option,
+        groupValue: _selected,
+        activeColor: Colors.green,
+        inactiveColor: Colors.green.shade100,
+        size: 22,
+        onChanged: (val) => setState(() => _selected = val!),
+      )
+      .withPadding(const EdgeInsets.symmetric(vertical: 6)),
+  ).toList(),
+);
 ```
-#### Unit Conversions Extensions
+
+---
+
+## Distance Calculator
+
+Uses the Haversine formula for accurate great-circle distance.
 
 ```dart
+final distance = 0.calculateDistance(
+  startLatitude: 28.7041,   // Delhi
+  startLongitude: 77.1025,
+  endLatitude: 19.0760,     // Mumbai
+  endLongitude: 72.8777,
+);
 
-double length = 5000; // Example for Length
-double temperature = 25; // Celsius
-double area = 10000; // Square meters
-double weight = 70; // Kilograms
-double speed = 100; // Kilometers per hour
-double time = 3600; // Seconds
-double volume = 100; // Liters
-double digitalStorage = 2048; // MB
-double energy = 1000; // Joules
-double pressure = 101325; // Pascals
-double angle = 90; // Degrees
-double currency = 100; // USD
-double electricity = 1.5; // Volts
-double fuelEfficiency = 25; // MPG
-double power = 500; // Watts
-double dataRate = 10; // Mbps
-double powerConsumption = 1000; // Watt-hours
-
-// Length conversions
-print('Length Conversions:');
-print('Meters to Kilometers: ${length.toKilometersPro}');
-print('Meters to Miles: ${length.toMilesPro}');
-print('Yards to Meters: ${length.toMetersFromYardsPro}');
-print('Feet to Meters: ${length.toMetersFromFeetPro}');
-print('Inches to Centimeters: ${length.toCentimetersFromInchesPro}');
-print('Centimeters to Inches: ${length.toInchesFromCentimetersPro}');
-
-// Temperature conversions
-print('\nTemperature Conversions:');
-print('Celsius to Fahrenheit: ${temperature.toFahrenheitPro}');
-print('Fahrenheit to Celsius: ${temperature.toCelsiusPro}');
-
-// Area conversions
-print('\nArea Conversions:');
-print('Square Meters to Acres: ${area.toAcresPro}');
-print('Square Feet to Square Meters: ${area.toSquareMetersPro}');
-
-// Weight conversions
-print('\nWeight Conversions:');
-print('Kilograms to Pounds: ${weight.toPoundsPro}');
-print('Pounds to Kilograms: ${weight.toKilogramsPro}');
-print('Ounces to Grams: ${weight.toGramsPro}');
-print('Grams to Ounces: ${weight.toOuncesPro}');
-
-// Speed conversions
-print('\nSpeed Conversions:');
-print('Kilometers per Hour to Miles per Hour: ${speed.toMilesPerHourPro}');
-print('Miles per Hour to Kilometers per Hour: ${speed.toKilometersPerHourPro}');
-
-// Time conversions
-print('\nTime Conversions:');
-print('Seconds to Minutes: ${time.toMinutesPro}');
-print('Minutes to Hours: ${time.toHoursPro}');
-print('Hours to Days: ${time.toDaysPro}');
-
-// Volume conversions
-print('\nVolume Conversions:');
-print('Liters to Gallons: ${volume.toGallonsPro}');
-print('Gallons to Liters: ${volume.toLitersPro}');
-print('Cubic Meters to Cubic Feet: ${volume.toCubicFeetPro}');
-print('Cubic Feet to Cubic Meters: ${volume.toCubicMetersFromCubicFeetPro}');
-
-// Digital storage conversions
-print('\nDigital Storage Conversions:');
-print('MB to GB: ${digitalStorage.toGBPro}');
-print('GB to MB: ${digitalStorage.toMBPro}');
-
-// Energy conversions
-print('\nEnergy Conversions:');
-print('Joules to Calories: ${energy.toCaloriesPro}');
-print('Calories to Joules: ${energy.toJoulesPro}');
-
-// Pressure conversions
-print('\nPressure Conversions:');
-print('Pascals to Bar: ${pressure.toBarPro}');
-print('Atmosphere to Pascal: ${pressure.toPascalPro}');
-
-// Angle conversions
-print('\nAngle Conversions:');
-print('Degrees to Radians: ${angle.toRadiansPro}');
-print('Radians to Degrees: ${angle.toDegreesPro}');
-
-// Currency conversions
-print('\nCurrency Conversions:');
-print('USD to EUR: ${currency.toEURPro}');
-print('EUR to USD: ${currency.toUSDPro}');
-
-// Electricity conversions
-print('\nElectricity Conversions:');
-print('Volts to Millivolts: ${electricity.toMillivoltsPro}');
-print('Millivolts to Volts: ${electricity.toVoltsFromMillivoltsPro}');
-
-// Fuel efficiency
-print('\nFuel Efficiency:');
-print('MPG to L/100km: ${fuelEfficiency.toLPer100kmPro}');
-print('L/100km to MPG: ${fuelEfficiency.toMPGPro}');
-
-// Power conversions
-print('\nPower Conversions:');
-print('Watts to Kilowatts: ${power.toKilowattsPro}');
-print('Kilowatts to Watts: ${power.toWattsPro}');
-
-// Data rate conversions
-print('\nData Rate Conversions:');
-print('Mbps to Kbps: ${dataRate.toKbpsPro}');
-print('Kbps to Mbps: ${dataRate.toMbpsPro}');
-
-// Power consumption
-print('\nPower Consumption:');
-print('Watt-hours to Kilowatt-hours: ${powerConsumption.toKilowattHoursPro}');
-print('Kilowatt-hours to Watt-hours: ${powerConsumption.toWattHoursPro}');
+print('${distance.toStringAsFixed(2)} km');  // 1158.91 km
 ```
-#### Status Bar Extensions
+
+---
+
+## Unit Conversion Extensions
+
+All conversions are extension getters/methods on `num` (works with `int` and `double`).
 
 ```dart
-//Set Status Bar Color
-context.setStatusBarColor(Colors.blue, darkIcons: false)
+// ── Length ────────────────────────────────────
+5000.toKilometersPro;             // m → km
+5000.toMilesPro;                  // m → mi
+5000.toMetersFromFeetPro;         // ft → m
+5000.toCentimetersFromInchesPro;  // in → cm
+5000.toInchesFromCentimetersPro;  // cm → in
 
-//Hide Status Bar
-context.hideStatusBar()
+// ── Temperature ───────────────────────────────
+25.toFahrenheitPro;  // °C → °F  → 77.0
+77.toCelsiusPro;     // °F → °C  → 25.0
 
-//Show Status Bar
+// ── Area ──────────────────────────────────────
+10000.toAcresPro;          // m² → acres
+10000.toSquareMetersPro;   // ft² → m²
+
+// ── Weight ────────────────────────────────────
+70.toPoundsPro;      // kg → lb
+154.toKilogramsPro;  // lb → kg
+28.toGramsPro;       // oz → g
+100.toOuncesPro;     // g  → oz
+
+// ── Speed ─────────────────────────────────────
+100.toMilesPerHourPro;       // km/h → mph
+62.toKilometersPerHourPro;   // mph  → km/h
+
+// ── Time ──────────────────────────────────────
+3600.toMinutesPro;  // s  → min  → 60.0
+3600.toHoursPro;    // s  → hr   → 1.0
+24.toDaysPro;       // hr → days → 1.0
+
+// ── Volume ────────────────────────────────────
+100.toGallonsPro;                    // L  → gal
+10.toLitersPro;                      // gal → L
+1.toCubicFeetPro;                    // m³ → ft³
+35.toCubicMetersFromCubicFeetPro;    // ft³ → m³
+
+// ── Digital Storage ───────────────────────────
+2048.toGBPro;         // MB → GB
+2.toMBPro;            // GB → MB
+500.toKilobytesPro;   // MB → KB
+512.toMegabytesPro;   // KB → MB
+
+// ── Energy ────────────────────────────────────
+1000.toCaloriesPro;  // J   → cal
+239.toJoulesPro;     // cal → J
+
+// ── Pressure ──────────────────────────────────
+101325.toBarPro;    // Pa  → bar
+1.toPascalPro;      // atm → Pa
+
+// ── Angle ─────────────────────────────────────
+90.toRadiansPro;     // deg → rad  → 1.5708
+1.5708.toDegreesPro; // rad → deg  → 90.0
+
+// ── Currency (indicative rates) ───────────────
+100.toEURPro;  // USD → EUR
+92.toUSDPro;   // EUR → USD
+
+// ── Electricity ───────────────────────────────
+1.5.toMillivoltsPro;          // V  → mV
+1500.toVoltsFromMillivoltsPro; // mV → V
+
+// ── Fuel Efficiency ───────────────────────────
+25.toLPer100kmPro;  // MPG  → L/100km
+9.41.toMPGPro;      // L/100km → MPG
+
+// ── Power ─────────────────────────────────────
+500.toKilowattsPro;   // W  → kW
+0.5.toWattsPro;       // kW → W
+
+// ── Data Rate ─────────────────────────────────
+10.toKbpsPro;    // Mbps → Kbps
+10000.toMbpsPro; // Kbps → Mbps
+
+// ── Power Consumption ─────────────────────────
+1000.toKilowattHoursPro;  // Wh → kWh
+1.toWattHoursPro;         // kWh → Wh
+```
+
+---
+
+## Status Bar Extensions
+
+```dart
+// Set color and icon brightness
+context.setStatusBarColor(Colors.blue, darkIcons: false);
+
+// Hide the status bar completely
+context.hideStatusBar();
+
+// Restore the status bar
 context.showStatusBar();
 
-//Set Status Bar Brightness
+// Set brightness
 context.setStatusBarBrightness(Brightness.dark);
 
-//Set Status Bar Text Colo
-context.setStatusBarTextColor(true); // Dark text
-context.setStatusBarTextColor(false); // Light text
+// Set icon color only
+context.setStatusBarTextColor(true);   // dark icons
+context.setStatusBarTextColor(false);  // light icons
 ```
-## Authors
-* [@sanjaysharmajw](https://github.com/sanjaysharmajw)
 
+---
 
-## About Me
-I'm a full stack developer. Cross-Platform Mobile Developer: Android, iOS, Swift , and Flutter Expert
+## Author
 
+**Sanjay Sharma** — Full-Stack & Cross-Platform Mobile Developer  
+Android · iOS · Swift · Flutter · Dart · Node.js
+
+[![GitHub](https://img.shields.io/badge/GitHub-@sanjaysharmajw-181717?logo=github)](https://github.com/sanjaysharmajw)
+
+---
 
 ## License
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sanjaysharmajw/extensions_pro/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sanjaysharmajw/extensions_pro/blob/main/LICENSE)
 
+---
 
 ## Support
-I hope you had a great experience using this package! If you found the Extensions Pro helpful, consider supporting me by buying a coffee—your generosity would mean a lot and is deeply appreciated!
+
+If Extensions Pro saved you time, consider buying me a coffee — it keeps the extensions coming! ☕
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/sanjaysharmajw)
-
-
-
-## Skills
-Android, iOS, Java, Kotlin, JetPack Compose, SwiftUI, Flutter, Dart, JavaScript, Node.js...
-

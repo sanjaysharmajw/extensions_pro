@@ -24,7 +24,7 @@ extension DatePickerExtension on BuildContext {
               surface: surfaceColor,                   // Calendar background
               onSurface: Colors.black,                 // Normal text color
             ),
-            dialogBackgroundColor: surfaceColor,        // Dialog color
+            dialogTheme: DialogThemeData(backgroundColor: surfaceColor),
           ),
           child: child!,
         );

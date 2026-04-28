@@ -27,7 +27,7 @@ extension UnitConversions on num {
 
   /// Time Conversions
   double get toMinutesPro => this / 60;
-  double get toHoursPro => this / 60;
+  double get toHoursPro => this / 3600;
   double get toDaysPro => this / 24;
 
   /// Volume Conversions

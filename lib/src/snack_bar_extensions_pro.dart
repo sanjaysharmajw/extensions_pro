@@ -64,7 +64,7 @@ extension SnackBarExtensions on BuildContext {
   }
 
   //SnackBar with Gradient
-  void showGradientSnackBar(BuildContext context, String message) {
+  void showGradientSnackBar(String message) {
     final snackBar = SnackBar(
       duration: const Duration(seconds: 3),
       behavior: SnackBarBehavior.floating,
@@ -84,7 +84,7 @@ extension SnackBarExtensions on BuildContext {
         ),
       ),
     );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    ScaffoldMessenger.of(this).showSnackBar(snackBar);
   }
 
   //SnackBar with Custom Duration

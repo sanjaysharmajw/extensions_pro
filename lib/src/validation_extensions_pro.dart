@@ -23,7 +23,7 @@ extension ValidationExtensionsPro on String {
     return passwordRegex.hasMatch(this);
   }
 
-  bool isNumeric() {
+  bool isDigitsOnly() {
     final numericRegex = RegExp(r'^\d+$');
     return numericRegex.hasMatch(this);
   }
@@ -34,11 +34,13 @@ extension ValidationExtensionsPro on String {
   }
 
   bool isValidCreditCardNumber() {
+    final cleaned = replaceAll(RegExp(r'[\s-]'), '');
+    if (cleaned.isEmpty || !RegExp(r'^\d+$').hasMatch(cleaned)) return false;
     int sum = 0;
     bool shouldDouble = false;
 
-    for (int i = length - 1; i >= 0; i--) {
-      int digit = int.parse(this[i]);
+    for (int i = cleaned.length - 1; i >= 0; i--) {
+      int digit = int.parse(cleaned[i]);
       if (shouldDouble) {
         digit *= 2;
         if (digit > 9) digit -= 9;

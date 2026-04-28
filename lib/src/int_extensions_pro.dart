@@ -55,74 +55,39 @@ extension IntExtensionsPro on int {
   String toWords() {
     if (this == 0) return 'zero';
 
-    final units = [
-      '',
-      'one',
-      'two',
-      'three',
-      'four',
-      'five',
-      'six',
-      'seven',
-      'eight',
-      'nine'
+    const unitWords = [
+      '', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine',
+      'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
+      'seventeen', 'eighteen', 'nineteen',
     ];
-    final teens = [
-      'eleven',
-      'twelve',
-      'thirteen',
-      'fourteen',
-      'fifteen',
-      'sixteen',
-      'seventeen',
-      'eighteen',
-      'nineteen'
+    const tensWords = [
+      '', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety',
     ];
-    final tens = [
-      '',
-      'ten',
-      'twenty',
-      'thirty',
-      'forty',
-      'fifty',
-      'sixty',
-      'seventy',
-      'eighty',
-      'ninety'
-    ];
-    final thousands = ['', 'thousand', 'lakh', 'crore'];
 
-    int num = this;
-    String result = '';
-
-    int placeValue = 0;
-
-    while (num > 0) {
-      if (placeValue == 0) {
-        // Handle last two digits
-        final lastTwoDigits = num % 100;
-        if (lastTwoDigits < 10) {
-          result = '${units[lastTwoDigits]} $result';
-        } else if (lastTwoDigits > 10 && lastTwoDigits < 20) {
-          result = '${teens[lastTwoDigits - 11]} $result';
-        } else {
-          result =
-              '${tens[lastTwoDigits ~/ 10]} ${units[lastTwoDigits % 10]} $result';
-        }
-        num ~/= 100;
-      } else {
-        // Handle larger place values (thousands, lakhs, crores)
-        final part = num % 100;
-        if (part > 0) {
-          result =
-              '${units[part ~/ 10]} ${units[part % 10]} ${thousands[placeValue]} $result';
-        }
-        num ~/= 100;
+    String convert(int n) {
+      if (n == 0) return '';
+      if (n < 20) return unitWords[n];
+      if (n < 100) {
+        final rem = n % 10;
+        return rem == 0 ? tensWords[n ~/ 10] : '${tensWords[n ~/ 10]} ${unitWords[rem]}';
       }
-      placeValue++;
+      if (n < 1000) {
+        final rem = n % 100;
+        return '${unitWords[n ~/ 100]} hundred${rem == 0 ? '' : ' ${convert(rem)}'}';
+      }
+      if (n < 100000) {
+        final rem = n % 1000;
+        return '${convert(n ~/ 1000)} thousand${rem == 0 ? '' : ' ${convert(rem)}'}';
+      }
+      if (n < 10000000) {
+        final rem = n % 100000;
+        return '${convert(n ~/ 100000)} lakh${rem == 0 ? '' : ' ${convert(rem)}'}';
+      }
+      final rem = n % 10000000;
+      return '${convert(n ~/ 10000000)} crore${rem == 0 ? '' : ' ${convert(rem)}'}';
     }
 
-    return result.trim();
+    return convert(this);
   }
 
 //toShortString
