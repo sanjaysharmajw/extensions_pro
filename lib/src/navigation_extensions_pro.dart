@@ -30,4 +30,17 @@ extension NavigationExtensionsPro on BuildContext {
       (route) => false,
     );
   }
+
+  /// Pushes a named route onto the navigation stack
+  Future<T?> pushNamed<T>(String routeName, {Object? arguments}) async {
+    return await Navigator.pushNamed<T>(this, routeName, arguments: arguments);
+  }
+
+  /// Pops routes until the one with [routeName] is reached
+  void popUntil(String routeName) {
+    Navigator.popUntil(this, ModalRoute.withName(routeName));
+  }
+
+  /// True if there is a route available to pop
+  bool get canPop => Navigator.canPop(this);
 }

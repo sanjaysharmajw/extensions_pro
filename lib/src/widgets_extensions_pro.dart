@@ -82,4 +82,60 @@ extension WidgetsExtensionsPro on Widget {
       child: this,
     );
   }
+
+  /// Wraps the widget in an `Opacity` widget
+  Widget withOpacity(double opacity) {
+    return Opacity(
+      opacity: opacity,
+      child: this,
+    );
+  }
+
+  /// Applies a `GestureDetector` to detect long presses
+  Widget onLongPress(Function() onLongPress) {
+    return GestureDetector(
+      onLongPress: onLongPress,
+      child: this,
+    );
+  }
+
+  /// Constrains the widget to a fixed [aspectRatio] (width / height)
+  Widget withAspectRatio(double aspectRatio) {
+    return AspectRatio(
+      aspectRatio: aspectRatio,
+      child: this,
+    );
+  }
+
+  /// Wraps the widget in a `SafeArea`
+  Widget withSafeArea({
+    bool top = true,
+    bool bottom = true,
+    bool left = true,
+    bool right = true,
+  }) {
+    return SafeArea(
+      top: top,
+      bottom: bottom,
+      left: left,
+      right: right,
+      child: this,
+    );
+  }
+
+  /// Wraps the widget in a `Container` with the given background [color]
+  Widget withBackgroundColor(Color color) {
+    return Container(
+      color: color,
+      child: this,
+    );
+  }
+
+  /// Wraps the widget in a `Hero` for shared-element transitions
+  Widget withHero(Object tag) {
+    return Hero(
+      tag: tag,
+      child: this,
+    );
+  }
 }

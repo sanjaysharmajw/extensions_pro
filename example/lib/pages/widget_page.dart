@@ -10,8 +10,6 @@ class WidgetPage extends StatefulWidget {
 
 class _WidgetPageState extends State<WidgetPage> {
   bool _isVisible = true;
-  int _selectedRadio = 1;
-  String _selectedPlan = 'Pro';
 
   @override
   Widget build(BuildContext context) {
@@ -33,20 +31,6 @@ class _WidgetPageState extends State<WidgetPage> {
           const _SectionHeader(title: 'Navigation Extensions', color: Color(0xFF1565C0)),
           const SizedBox(height: 12),
           _NavigationCard(),
-          const SizedBox(height: 16),
-          const _SectionHeader(title: 'Custom Radio Button', color: Color(0xFFE91E63)),
-          const SizedBox(height: 12),
-          _RadioCard(
-            selected: _selectedRadio,
-            onChanged: (v) => setState(() => _selectedRadio = v!),
-          ),
-          const SizedBox(height: 16),
-          const _SectionHeader(title: 'Radio — Plan Selector', color: Color(0xFF6750A4)),
-          const SizedBox(height: 12),
-          _PlanSelector(
-            selected: _selectedPlan,
-            onChanged: (v) => setState(() => _selectedPlan = v!),
-          ),
           const SizedBox(height: 16),
           const _SectionHeader(title: 'Visibility Toggle', color: Color(0xFFFB8C00)),
           const SizedBox(height: 12),
@@ -129,6 +113,39 @@ class _WidgetExtCard extends StatelessWidget {
                 child: const Text('Shadow'),
               ).withShadow(blurRadius: 8, color: Colors.teal.withAlpha(80)),
             ),
+            const Divider(height: 24),
+            _DemoRow(
+              label: '.withOpacity(0.5)',
+              child: Container(
+                color: Colors.teal,
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: const Text('Faded', style: TextStyle(color: Colors.white)),
+              ).withOpacity(0.5),
+            ),
+            const Divider(height: 24),
+            _DemoRow(
+              label: '.onLongPress()',
+              child: const Text('Long-press me!', style: TextStyle(color: Colors.teal, fontWeight: FontWeight.bold)).onLongPress(() {
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Long pressed via .onLongPress()!')));
+              }),
+            ),
+            const Divider(height: 24),
+            _DemoRow(
+              label: '.withAspectRatio(3)',
+              child: Container(color: Colors.teal.shade100).withAspectRatio(3),
+            ),
+            const Divider(height: 24),
+            _DemoRow(
+              label: '.withBackgroundColor()',
+              child: const Text('On amber background').withBackgroundColor(Colors.amber.shade100).withPadding(const EdgeInsets.all(8)),
+            ),
+            const Divider(height: 24),
+            _DemoRow(
+              label: '.withHero(tag)',
+              child: const Text('Tap to view Hero', style: TextStyle(color: Colors.teal, fontWeight: FontWeight.bold))
+                  .withHero('widget-page-hero')
+                  .onTap(() => context.push(const _HeroDetailPage())),
+            ),
           ],
         ),
       ),
@@ -179,6 +196,31 @@ class _NavigationCard extends StatelessWidget {
               color: const Color(0xFF00695C),
               onTap: () => context.pushReplacement(const _DemoDetailPage(title: 'Replacement Page', color: Color(0xFF00695C))),
             ),
+            const SizedBox(height: 10),
+            _NavButton(
+              icon: Icons.route_outlined,
+              label: "context.pushNamed('/demo-named')",
+              subtitle: 'Push a named route',
+              color: const Color(0xFF6A1B9A),
+              onTap: () => context.pushNamed('/demo-named'),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade100,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                children: [
+                  const Icon(Icons.info_outline, size: 18, color: Colors.grey),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text('context.canPop: ${context.canPop}', style: const TextStyle(fontFamily: 'monospace', fontSize: 12)),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -223,91 +265,6 @@ class _NavButton extends StatelessWidget {
   }
 }
 
-class _RadioCard extends StatelessWidget {
-  const _RadioCard({required this.selected, required this.onChanged});
-  final int selected;
-  final ValueChanged<int?> onChanged;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16), side: BorderSide(color: Colors.grey.shade200)),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            for (final entry in {1: 'Option One', 2: 'Option Two', 3: 'Option Three'}.entries)
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 6),
-                child: Text(
-                  entry.value,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: selected == entry.key ? FontWeight.bold : FontWeight.normal,
-                    color: selected == entry.key ? const Color(0xFFE91E63) : Colors.black87,
-                  ),
-                ).radioButton<int>(
-                  value: entry.key,
-                  groupValue: selected,
-                  onChanged: onChanged,
-                  activeColor: const Color(0xFFE91E63),
-                  size: 22,
-                ),
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _PlanSelector extends StatelessWidget {
-  const _PlanSelector({required this.selected, required this.onChanged});
-  final String selected;
-  final ValueChanged<String?> onChanged;
-
-  static const _plans = ['Starter', 'Pro', 'Enterprise'];
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16), side: BorderSide(color: Colors.grey.shade200)),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: _plans.map((plan) {
-            final isSelected = selected == plan;
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6),
-              child: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: isSelected ? const Color(0xFF6750A4).withAlpha(15) : Colors.transparent,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: isSelected ? const Color(0xFF6750A4).withAlpha(80) : Colors.grey.shade200),
-                ),
-                child: Text(
-                  plan,
-                  style: TextStyle(fontWeight: isSelected ? FontWeight.bold : FontWeight.normal, color: isSelected ? const Color(0xFF6750A4) : Colors.black87),
-                ).radioButton<String>(
-                  value: plan,
-                  groupValue: selected,
-                  onChanged: onChanged,
-                  activeColor: const Color(0xFF6750A4),
-                  size: 20,
-                ),
-              ),
-            );
-          }).toList(),
-        ),
-      ),
-    );
-  }
-}
-
 class _VisibilityCard extends StatelessWidget {
   const _VisibilityCard({required this.isVisible, required this.onToggle});
   final bool isVisible;
@@ -343,6 +300,27 @@ class _VisibilityCard extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _HeroDetailPage extends StatelessWidget {
+  const _HeroDetailPage();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF00897B),
+        foregroundColor: Colors.white,
+        title: const Text('Hero Destination'),
+      ),
+      body: Center(
+        child: const Text(
+          'Tap to view Hero',
+          style: TextStyle(color: Color(0xFF00897B), fontWeight: FontWeight.bold, fontSize: 22),
+        ).withHero('widget-page-hero'),
       ),
     );
   }

@@ -81,4 +81,30 @@ extension ValidationExtensionsPro on String {
       return false;
     }
   }
+
+  /// Validates a username: 3–20 characters, letters, digits, and underscores.
+  bool isValidUsername() {
+    final usernameRegex = RegExp(r'^[a-zA-Z0-9_]{3,20}$');
+    return usernameRegex.hasMatch(this);
+  }
+
+  /// Validates an Indian 6-digit PIN code (first digit cannot be zero).
+  bool isValidPinCode() {
+    final pinCodeRegex = RegExp(r'^[1-9][0-9]{5}$');
+    return pinCodeRegex.hasMatch(this);
+  }
+
+  /// Validates an IPv4 address.
+  bool isValidIPAddress() {
+    final ipRegex = RegExp(
+      r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$',
+    );
+    return ipRegex.hasMatch(this);
+  }
+
+  /// Validates a person's name: letters, spaces, apostrophes, and hyphens only.
+  bool isValidName() {
+    final nameRegex = RegExp(r"^[a-zA-Z\s'-]+$");
+    return trim().isNotEmpty && nameRegex.hasMatch(this);
+  }
 }

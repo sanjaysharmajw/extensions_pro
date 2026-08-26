@@ -69,6 +69,10 @@ class _DateTimePageState extends State<DateTimePage> {
           const SizedBox(height: 12),
           _DateInfoCard(now: _now),
           const SizedBox(height: 12),
+          _CalendarCard(now: _now),
+          const SizedBox(height: 12),
+          _RangesCard(now: _now),
+          const SizedBox(height: 12),
           _AgeCard(birthYearCtrl: _birthYearCtrl, birthday: birthday, onChanged: (_) => setState(() {})),
           const SizedBox(height: 12),
           _DateMathCard(now: _now),
@@ -243,6 +247,72 @@ class _DateInfoCard extends StatelessWidget {
             _Row('isYesterday', now.subtract(const Duration(days: 1)).isYesterday.toString()),
             _Row('isTomorrow', now.add(const Duration(days: 1)).isTomorrow.toString()),
             _Row('weekdayName', now.weekdayName),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _CalendarCard extends StatelessWidget {
+  const _CalendarCard({required this.now});
+  final DateTime now;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16), side: BorderSide(color: Colors.grey.shade200)),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Calendar Extensions', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+            const SizedBox(height: 12),
+            _Row('isWeekend', now.isWeekend.toString()),
+            _Row('isWeekday', now.isWeekday.toString()),
+            _Row('isLeapYear', now.isLeapYear.toString()),
+            _Row('daysInMonth', now.daysInMonth.toString()),
+            _Row('weekOfYear', now.weekOfYear.toString()),
+            _Row('toRelativeDateLabel()', now.toRelativeDateLabel()),
+            _Row('timeAgo (1h ago)', now.subtract(const Duration(hours: 1)).timeAgo),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _RangesCard extends StatelessWidget {
+  const _RangesCard({required this.now});
+  final DateTime now;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16), side: BorderSide(color: Colors.grey.shade200)),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Week / Month / Year Ranges', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+            const SizedBox(height: 12),
+            _Row('startOfWeek', now.startOfWeek.format('dd MMM yyyy')),
+            _Row('endOfWeek', now.endOfWeek.format('dd MMM yyyy')),
+            _Row('startOfMonth', now.startOfMonth.format('dd MMM yyyy')),
+            _Row('endOfMonth', now.endOfMonth.format('dd MMM yyyy')),
+            _Row('startOfYear', now.startOfYear.format('dd MMM yyyy')),
+            _Row('endOfYear', now.endOfYear.format('dd MMM yyyy')),
+            _Row('addWeeks(2)', now.addWeeks(2).format('dd MMM yyyy')),
+            _Row('subtractWeeks(1)', now.subtractWeeks(1).format('dd MMM yyyy')),
+            _Row('isSameMonth(now)', now.isSameMonth(now).toString()),
+            _Row('isSameYear(now)', now.isSameYear(now).toString()),
+            _Row('isInPast (yesterday)', now.subtract(const Duration(days: 1)).isInPast.toString()),
+            _Row('isInFuture (tomorrow)', now.add(const Duration(days: 1)).isInFuture.toString()),
+            _Row('copyWith(hour: 8)', now.copyWith(hour: 8, minute: 0, second: 0).format('dd MMM yyyy, hh:mm a')),
           ],
         ),
       ),

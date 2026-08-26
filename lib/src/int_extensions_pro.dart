@@ -1,3 +1,7 @@
+import 'package:intl/intl.dart';
+
+import 'duration_extensions_pro.dart';
+
 extension IntExtensionsPro on int {
   String get toDurationString => '${this ~/ 60}m ${this % 60}s';
 
@@ -102,4 +106,35 @@ extension IntExtensionsPro on int {
       return toString();
     }
   }
+
+  /// True if this number is a prime number.
+  bool get isPrime {
+    if (this < 2) return false;
+    if (this == 2) return true;
+    if (isEven) return false;
+    for (int i = 3; i * i <= this; i += 2) {
+      if (this % i == 0) return false;
+    }
+    return true;
+  }
+
+  /// Formats this integer as a currency string using [symbol].
+  ///
+  /// 1234567.toCurrencyString();  // "₹1,234,567"
+  /// 1234567.toCurrencyString(symbol: '\$');  // "$1,234,567"
+  String toCurrencyString({String symbol = '₹'}) {
+    return NumberFormat.currency(symbol: symbol, decimalDigits: 0)
+        .format(this);
+  }
+
+  /// Formats this integer as a percentage string.
+  ///
+  /// 45.toPercentageString();  // "45%"
+  String toPercentageString() => '$this%';
+
+  /// Treats this integer as a number of seconds and formats it as
+  /// `mm:ss` / `HH:mm:ss`.
+  ///
+  /// 125.secondsToTimeString();  // "02:05"
+  String secondsToTimeString() => Duration(seconds: this).toFormattedString();
 }

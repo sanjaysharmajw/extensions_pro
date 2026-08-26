@@ -59,6 +59,25 @@ class _StringPageState extends State<StringPage> {
           ),
           const SizedBox(height: 12),
           _SectionCard(
+            color: const Color(0xFF00838F),
+            title: 'More String Tools',
+            children: [
+              _ResultRow('toTitleCase()', s.toTitleCase()),
+              _ResultRow('mask()', s.mask()),
+              _ResultRow('toInitials()', s.toInitials()),
+              _ResultRow('toSlug()', s.toSlug()),
+              _ResultRow("equalsIgnoreCase('${s.toUpperCase()}')", s.equalsIgnoreCase(s.toUpperCase()).toString()),
+              _ResultRow('toBase64()', s.toBase64()),
+              _ResultRow('fromBase64() of that', s.toBase64().fromBase64()),
+              _ResultRow('wordCount()', s.wordCount().toString()),
+              _ResultRow('removeSpecialCharacters()', s.removeSpecialCharacters()),
+              _ResultRow("pluralize(2, plural: '${s}s')", s.pluralize(2)),
+            ],
+          ),
+          const SizedBox(height: 12),
+          const _HighlightSearchCard(),
+          const SizedBox(height: 12),
+          _SectionCard(
             color: const Color(0xFF6A1B9A),
             title: 'Try These Examples',
             children: [
@@ -195,6 +214,73 @@ class _QuickInput extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         ),
         child: Text(label, style: const TextStyle(fontFamily: 'monospace', fontSize: 12)),
+      ),
+    );
+  }
+}
+
+class _HighlightSearchCard extends StatefulWidget {
+  const _HighlightSearchCard();
+
+  @override
+  State<_HighlightSearchCard> createState() => _HighlightSearchCardState();
+}
+
+class _HighlightSearchCardState extends State<_HighlightSearchCard> {
+  static const _text =
+      'Flutter extensions make Flutter development faster. Extensions Pro adds 140+ extensions.';
+  final _queryCtrl = TextEditingController(text: 'flutter');
+
+  @override
+  void dispose() {
+    _queryCtrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16), side: BorderSide(color: Colors.grey.shade200)),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('highlightOccurrences()', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, fontFamily: 'monospace')),
+            const SizedBox(height: 10),
+            TextField(
+              controller: _queryCtrl,
+              onChanged: (_) => setState(() {}),
+              decoration: InputDecoration(
+                hintText: 'Search term',
+                prefixIcon: const Icon(Icons.search, size: 20),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: Colors.grey.shade300)),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                isDense: true,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(color: Colors.grey.shade50, borderRadius: BorderRadius.circular(8), border: Border.all(color: Colors.grey.shade200)),
+              child: RichText(
+                text: TextSpan(
+                  children: _text.highlightOccurrences(
+                    _queryCtrl.text,
+                    baseStyle: const TextStyle(color: Colors.black87, fontSize: 13),
+                    highlightStyle: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      backgroundColor: Colors.yellow,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

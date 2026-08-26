@@ -1,3 +1,64 @@
+## 1.0.32
+
+### Breaking Change
+* Removed the Radio Button extension (`CustomRadioButton.radioButton()` on `Widget`). Use Flutter's built-in `Radio`/`RadioListTile`, or keep your own copy of the removed implementation if you still need it.
+
+## 1.0.31
+
+### New Extensions
+* **Date** — `isInPast`, `isInFuture`, `startOfWeek`/`endOfWeek`, `startOfMonth`/`endOfMonth`, `startOfYear`/`endOfYear`, `addWeeks()`/`subtractWeeks()`, `isSameMonth()`/`isSameYear()`, `weekOfYear`, `toRelativeDateLabel()`
+* **String** — `toBase64()`/`fromBase64()`, `wordCount()`, `removeSpecialCharacters()`, `pluralize()`
+* **Int** — `isPrime`, `toCurrencyString()` (powered by `intl`), `toPercentageString()`, `secondsToTimeString()`
+* **List** — `swap()`, `groupBy()`, `rotate()`; new `flatten()` on `List<List<E>>` and `whereNotNull()` on `List<E?>`
+* **Map (new)** — `filterKeys()`, `filterValues()` on `Map<K, V>`; `toQueryString()` on `Map<String, dynamic>`; `isNullOrEmpty` on `Map<K, V>?`
+* **Validation** — `isValidUsername()`, `isValidPinCode()` (India), `isValidIPAddress()`, `isValidName()`
+* **Navigation** — `pushNamed()`, `popUntil()`, `canPop`
+* **Widget** — `withAspectRatio()`, `withSafeArea()`, `withBackgroundColor()`, `withHero()`
+* **BuildContext (Screen & Theme)** — `keyboardHeight`, `isKeyboardVisible`
+* **Color** — `isLight`/`isDark`, `blend()`, `toMaterialColor()`
+* **Duration** — `isZero`, `toHumanReadable()`
+* **Toast (new)** — `showToast()` on `BuildContext`, a lightweight overlay toast that doesn't require a `Scaffold`
+* **Clipboard (new)** — `copyToClipboard()` on `String`
+* **Highlight (new)** — `highlightOccurrences()` on `String`, returns `TextSpan`s for search-match highlighting
+
+### Example App
+* Added **Context & Utilities** and **Color Extensions** pages
+* Extended String, Number, Date & Time, List, Validation, and Widget pages with demos for every extension above
+* Added a named route to demonstrate `context.pushNamed()`
+
+### Tests
+* Added unit/widget tests for all extensions above (72 tests total)
+
+## 1.0.30
+
+### New Extensions
+* **Date** — `timeAgo` (relative time strings: "5m ago", "3d ago"), `copyWith()`
+* **String** — `toInitials()`, `toSlug()`, `equalsIgnoreCase()`
+* **List** — `randomElement()`
+* **Color (new)** — `toHex()`, `lighten()`, `darken()` on `Color`; `toColor()` on `String` for parsing hex strings
+* **Duration (new)** — `toFormattedString()` (`mm:ss` / `HH:mm:ss`)
+* **BuildContext (Screen & Theme)** — `orientation`, `isTablet`, `safeAreaPadding`
+* **BuildContext (Dialogs, new)** — `showLoadingDialog()`, `hideLoadingDialog()`, `showConfirmDialog()`
+
+### Tests
+* Added unit/widget tests for all extensions above
+
+## 1.0.29
+
+### New Extensions
+* **Date** — `isWeekend`, `isWeekday`, `isLeapYear`, `daysInMonth`, `isSameDay()`
+* **String** — `toTitleCase()`, `mask()` for hiding sensitive data (emails, card numbers)
+* **List** — `distinctBy()`; new `sumPro`, `averagePro`, `maxPro`, `minPro` on `List<num>`
+* **Widget** — `onLongPress()`, `withOpacity()`
+* **BuildContext (new: Screen & Theme)** — `screenSize`, `screenWidth`, `screenHeight`, `theme`, `textTheme`, `isDarkMode`, `unfocus()`
+* **Nullable Safety (new)** — `isNullOrEmpty` / `isNullOrBlank` / `orDefault()` on `String?`, `isNullOrEmpty` on `List<T>?`
+
+### Package Maintenance
+* Upgraded `flutter_lints` to `^6.0.0` and resolved the resulting lint
+* Added `repository`, `issue_tracker`, `funding`, and `topics` to `pubspec.yaml` for pub.dev scoring
+* Removed accidentally committed `.flutter-plugins` / `.flutter-plugins-dependencies` and added them to `.gitignore`
+* Added unit and widget tests for all new extensions
+
 ## 1.0.28
 
 ### Bug Fixes

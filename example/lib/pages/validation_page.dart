@@ -16,6 +16,10 @@ class _ValidationPageState extends State<ValidationPage> {
   final _otpCtrl = TextEditingController(text: '123456');
   final _cardCtrl = TextEditingController(text: '4532015112830366');
   final _hexCtrl = TextEditingController(text: '#FF6750A4');
+  final _usernameCtrl = TextEditingController(text: 'flutter_dev1');
+  final _pinCodeCtrl = TextEditingController(text: '411001');
+  final _ipCtrl = TextEditingController(text: '192.168.1.1');
+  final _nameCtrl = TextEditingController(text: "Mary-Jane O'Brien");
 
   @override
   void dispose() {
@@ -26,6 +30,10 @@ class _ValidationPageState extends State<ValidationPage> {
     _otpCtrl.dispose();
     _cardCtrl.dispose();
     _hexCtrl.dispose();
+    _usernameCtrl.dispose();
+    _pinCodeCtrl.dispose();
+    _ipCtrl.dispose();
+    _nameCtrl.dispose();
     super.dispose();
   }
 
@@ -106,6 +114,46 @@ class _ValidationPageState extends State<ValidationPage> {
             validator: (v) => v.isValidHexColor(),
             validLabel: 'Valid Hex Color',
             invalidLabel: 'Invalid Hex Color',
+            onChanged: (_) => setState(() {}),
+          ),
+          const SizedBox(height: 12),
+          _ValidationField(
+            label: 'Username',
+            icon: Icons.alternate_email,
+            controller: _usernameCtrl,
+            validator: (v) => v.isValidUsername(),
+            validLabel: 'Valid Username',
+            invalidLabel: 'Invalid (3-20 chars: letters, digits, underscore)',
+            onChanged: (_) => setState(() {}),
+          ),
+          const SizedBox(height: 12),
+          _ValidationField(
+            label: 'PIN Code (India)',
+            icon: Icons.local_post_office_outlined,
+            controller: _pinCodeCtrl,
+            validator: (v) => v.isValidPinCode(),
+            validLabel: 'Valid PIN Code',
+            invalidLabel: 'Invalid PIN Code (6 digits, no leading zero)',
+            onChanged: (_) => setState(() {}),
+          ),
+          const SizedBox(height: 12),
+          _ValidationField(
+            label: 'IPv4 Address',
+            icon: Icons.router_outlined,
+            controller: _ipCtrl,
+            validator: (v) => v.isValidIPAddress(),
+            validLabel: 'Valid IP Address',
+            invalidLabel: 'Invalid IP Address',
+            onChanged: (_) => setState(() {}),
+          ),
+          const SizedBox(height: 12),
+          _ValidationField(
+            label: "Person's Name",
+            icon: Icons.badge_outlined,
+            controller: _nameCtrl,
+            validator: (v) => v.isValidName(),
+            validLabel: 'Valid Name',
+            invalidLabel: 'Invalid (letters, spaces, apostrophes, hyphens only)',
             onChanged: (_) => setState(() {}),
           ),
           const SizedBox(height: 12),

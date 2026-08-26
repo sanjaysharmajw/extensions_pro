@@ -7,6 +7,8 @@ import 'pages/snackbar_page.dart';
 import 'pages/widget_page.dart';
 import 'pages/converter_page.dart';
 import 'pages/list_page.dart';
+import 'pages/context_page.dart';
+import 'pages/color_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,7 +60,19 @@ class HomeScreen extends StatelessWidget {
       'List Extensions',
       Icons.playlist_add_check_rounded,
       Color(0xFF3949AB),
-      'sort, find, chunk, dedupe',
+      'sort, find, chunk, dedupe, groupBy, rotate, map',
+    ),
+    _Feature(
+      'Context & Utilities',
+      Icons.dashboard_customize_outlined,
+      Color(0xFF00695C),
+      'screen, theme, dialogs, toast, clipboard',
+    ),
+    _Feature(
+      'Color Extensions',
+      Icons.palette_rounded,
+      Color(0xFF6750A4),
+      'hex, lighten, darken, blend, swatch',
     ),
   ];
 
@@ -71,6 +85,8 @@ class HomeScreen extends StatelessWidget {
     const WidgetPage(),
     const ConverterPage(),
     const ListPage(),
+    const ContextUtilitiesPage(),
+    const ColorPage(),
   ];
 
   @override
@@ -218,7 +234,7 @@ class HomeScreen extends StatelessWidget {
       children: [
         _StatChip(label: '${_features.length} Categories'),
         const SizedBox(width: 8),
-        const _StatChip(label: '60+ Extensions'),
+        const _StatChip(label: '140+ Extensions'),
       ],
     );
   }

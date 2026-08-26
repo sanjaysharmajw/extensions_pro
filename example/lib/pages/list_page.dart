@@ -22,6 +22,8 @@ class _ListPageState extends State<ListPage> {
     final chunks = _numbers.chunked(3);
     final findVal = int.tryParse(_findInput);
     final found = findVal != null ? _numbers.find((e) => e == findVal) : null;
+    final swapped = [..._numbers]..swap(0, _numbers.length - 1);
+    const nullableMix = <int?>[1, null, 2, null, 3];
 
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FA),
@@ -66,9 +68,27 @@ class _ListPageState extends State<ListPage> {
           const SizedBox(height: 12),
           _ChunksCard(chunks: chunks),
           const SizedBox(height: 12),
+          _ResultSection(
+            color: const Color(0xFF00695C),
+            title: 'Aggregates & New Tools',
+            items: [
+              _R('distinctBy((e) => e.isEven)', _numbers.distinctBy((e) => e.isEven).toString()),
+              _R('randomElement()', _numbers.randomElement().toString()),
+              _R('sumPro', _numbers.sumPro.toString()),
+              _R('averagePro', _numbers.averagePro.toStringAsFixed(2)),
+              _R('maxPro / minPro', '${_numbers.maxPro} / ${_numbers.minPro}'),
+              _R('swap(0, last)', swapped.toString()),
+              _R('rotate(2)', _numbers.rotate(2).toString()),
+              _R('chunked(3).flatten()', chunks.flatten().toString()),
+              _R('[1, null, 2, null, 3].whereNotNull()', nullableMix.whereNotNull().toString()),
+            ],
+          ),
+          const SizedBox(height: 12),
           _StringListCard(names: _names),
           const SizedBox(height: 12),
           _ForEachCard(numbers: _numbers),
+          const SizedBox(height: 12),
+          const _MapAndNullableCard(),
           const SizedBox(height: 12),
           _AddIfNotExistsCard(
             numbers: _numbers,
@@ -338,6 +358,7 @@ class _StringListCard extends StatelessWidget {
     final deduped = names.removeDuplicates();
     final sorted = [...names]..sortBy((e) => e);
     final mapped = names.removeDuplicates().toMap((e) => e[0]);
+    final grouped = names.removeDuplicates().groupBy((e) => e[0]);
 
     return Card(
       elevation: 0,
@@ -354,6 +375,7 @@ class _StringListCard extends StatelessWidget {
             _ListRow('removeDuplicates()', deduped.join(', ')),
             _ListRow('sortBy((e) => e)', sorted.join(', ')),
             _ListRow('toMap((e) => e[0])', mapped.toString()),
+            _ListRow('groupBy((e) => e[0])', grouped.toString()),
           ],
         ),
       ),
@@ -412,6 +434,43 @@ class _ForEachCard extends StatelessWidget {
               decoration: BoxDecoration(color: Colors.grey.shade50, borderRadius: BorderRadius.circular(8), border: Border.all(color: Colors.grey.shade200)),
               child: Text(buffer.toString().trim(), style: const TextStyle(fontFamily: 'monospace', fontSize: 12)),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _MapAndNullableCard extends StatelessWidget {
+  const _MapAndNullableCard();
+
+  @override
+  Widget build(BuildContext context) {
+    const query = {'q': 'flutter dev', 'page': 2, 'active': 1};
+    const String? nullName = null;
+    const List<int>? nullList = null;
+    const Map<String, int>? nullMap = null;
+
+    return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16), side: BorderSide(color: Colors.grey.shade200)),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Map & Nullable Safety Extensions', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+            const SizedBox(height: 4),
+            Text('Map: $query', style: const TextStyle(fontSize: 12, color: Colors.grey)),
+            const SizedBox(height: 10),
+            _ListRow("filterKeys((k) => k != 'page')", query.filterKeys((k) => k != 'page').toString()),
+            _ListRow('filterValues((v) => v is String)', query.filterValues((v) => v is String).toString()),
+            _ListRow('toQueryString()', query.toQueryString()),
+            _ListRow(
+              'isNullOrEmpty (String? / List? / Map?)',
+              '${nullName.isNullOrEmpty} / ${nullList.isNullOrEmpty} / ${nullMap.isNullOrEmpty}',
+            ),
+            _ListRow("nullName.orDefault('Guest')", nullName.orDefault('Guest')),
           ],
         ),
       ),

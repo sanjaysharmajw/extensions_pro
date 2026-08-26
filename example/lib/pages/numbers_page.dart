@@ -63,6 +63,28 @@ class _NumbersPageState extends State<NumbersPage> {
             ],
           ),
           const SizedBox(height: 12),
+          _ResultCard(
+            color: const Color(0xFF2E7D32),
+            title: 'More Number Tools',
+            items: [
+              _R('isPrime', n.isPrime.toString()),
+              _R('toCurrencyString()', n.toCurrencyString()),
+              _R("toCurrencyString(symbol: '\$')", n.toCurrencyString(symbol: '\$')),
+              _R('toPercentageString()', n.toPercentageString()),
+              _R('secondsToTimeString()', n.secondsToTimeString()),
+            ],
+          ),
+          const SizedBox(height: 12),
+          _ResultCard(
+            color: const Color(0xFF00838F),
+            title: 'Duration Extensions (treated as seconds)',
+            items: [
+              _R('toFormattedString()', Duration(seconds: n).toFormattedString()),
+              _R('toHumanReadable()', Duration(seconds: n).toHumanReadable()),
+              _R('isZero', Duration(seconds: n).isZero.toString()),
+            ],
+          ),
+          const SizedBox(height: 12),
           _QuickPickCard(
             numbers: const [1, 5, 12, 42, 100, 1000, 10000, 1000000],
             onPick: (v) => setState(() { _number = v; _ctrl.text = v.toString(); }),
